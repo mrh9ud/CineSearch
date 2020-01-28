@@ -1,21 +1,33 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-# def yelp
-#     yelp = ENV["YELP_API_KEY"]
-#     yelp_url = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=#{category}&location=#{location}"
-#     res = HTTParty.get(yelp_url, :headers => {"Authorization" => "Bearer #{yelp}", "x-requested-with" => "XMLHttpRequest"})
-#      render plain: res.body.squish
-#  end
-
 tmdb_key = ENV["TMDB_API_KEY"]
 
-Tmdb::Api.key(tmdb_key)
+#GETS LIST OF GENRES
+def getGenreList
+    tmdb_key = ENV["TMDB_API_KEY"]
+    genreList = RestClient.get("https://api.themoviedb.org/3/genre/movie/list?api_key=#{tmdb_key}&language=en-US")
+    parsedGenreList = JSON.parse(genreList.body)
+    p parsedGenreList['genres']
+end
 
-movie = Tmdb::Movie.latest
+# SEARCHES MOVIES BY USER INPUT
+def movieSearch
+    tmdb_key = ENV["TMDB_API_KEY"]
+    movieSearch = RestClient.get("https://api.themoviedb.org/3/search/movie?api_key=#{tmdb_key}&language=en-US&page=1&query=joker&include_adult=false")
+    parsedMovieSearch = JSON.parse(movieSearch.body)
+    parsedMovieSearch['results'].each do |movie|
+        p movie['id'], movie['original_title'], movie['release_date'], movie['genre_ids'], movie['overview'], movie['vote_average'], movie['video'], movie['poster_path'], movie['backdrop_path'], 'NEXT MOVIE'
+    end
+end
 
-p movie
+#MOVIE RECOMMENDATIONS INFO
+def getMovieRecommendations
+    tmdb_key = ENV["TMDB_API_KEY"]
+    movieRecommendations = RestClient.get("https://api.themoviedb.org/3/movie/525/recommendations?api_key=#{tmdb_key}&language=en-US&page=1")
+    parsedMovieRecommendations = JSON.parse(movieRecommendations.body)
+    parsedMovieRecommendations['results'].each do |movie|
+        p movie['genre_ids'], movie['original_title'], movie['overview'], movie['release_date']
+    end
+end
+
+movieSearch()
+# getGenreList()
+# getMovieRecommendations()

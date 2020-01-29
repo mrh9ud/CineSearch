@@ -1,3 +1,10 @@
+Movie.destroy_all
+User.destroy_all
+Favorite.destroy_all
+WatchList.destroy_all
+Genre.destroy_all
+MovieGenre.destroy_all
+
 tmdb_key = ENV["TMDB_API_KEY"]
 
 #GETS LIST OF GENRES

@@ -1,31 +1,16 @@
 class MoviesController < ApplicationController
 
     def index
-        movies = Movie.all
-        render json: movies.to_json(
-            except: [ :updated_at, :created_at ],
-            include: [
-                favorites: {
-                    only: [ :id ],
-                    include: [
-                        user: { except: [ :created_at, :updated_at] }
-                    ]
-                },
-                watch_lists: {
-                    only: [ :id, :watched ],
-                    include: [
-                        user: { except: [ :created_at, :updated_at ] }
-                    ]
-                },
-                movie_genres: {
-                    only: [ :id ],
-                    include: [
-                        genre: { except: [ :created_at, :updated_at ] }
-                    ]
-                }
-            ]
+        tmdb_key = ENV["TMDB_API_KEY"]
+
+        #gets movie recommendations
+        movieRecommendations = RestClient.get("https://api.themoviedb.org/3/movie/525/recommendations?api_key=#{tmdb_key}&language=en-US&page=1")
+        parsedMovieRecommendations = JSON.parse(movieRecommendations.body)
+        render json: parsedMovieRecommendations['results'].to_json(
+            only: [ 'id', 'original_title', "release_date", "overview", "vote_average", "video", "poster_path", 'backdrop_path' ]
         )
     end
+
     def search
         # SEARCHES MOVIES BY USER INPUT
         # def movieSearch

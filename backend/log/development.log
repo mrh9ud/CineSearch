@@ -429,3 +429,913 @@ Processing by GenresController#index as HTML
 Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 2541)
 
 
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovie Load (4.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Destroy (17.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (1.7ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Destroy (0.9ms)[0m  [1m[31mDELETE FROM "movie_genres" WHERE "movie_genres"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mWatchList Load (1.0ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Destroy (0.4ms)[0m  [1m[31mDELETE FROM "watch_lists" WHERE "watch_lists"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Destroy (0.4ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Destroy (1.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Destroy (0.6ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (5.2ms)[0m  [1m[32mINSERT INTO "movies" ("original_title", "overview", "vote_average", "video", "poster_path", "backdrop_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["original_title", "batman"], ["overview", "a description goes here"], ["vote_average", 3], ["video", "urlpath"], ["poster_path", "posterurl"], ["backdrop_path", "backdropurl"], ["created_at", "2020-01-29 16:31:00.380792"], ["updated_at", "2020-01-29 16:31:00.380792"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "name", "bio", "img", "region", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "mrh9ud"], ["password", "password"], ["name", "matt"], ["bio", "something about a person"], ["img", "profileURL"], ["region", "Central VA"], ["created_at", "2020-01-29 16:31:00.391080"], ["updated_at", "2020-01-29 16:31:00.391080"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "action"], ["created_at", "2020-01-29 16:31:00.395656"], ["updated_at", "2020-01-29 16:31:00.395656"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Create (0.9ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["movie_id", 2], ["created_at", "2020-01-29 16:31:00.404719"], ["updated_at", "2020-01-29 16:31:00.404719"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Create (0.8ms)[0m  [1m[32mINSERT INTO "watch_lists" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["movie_id", 2], ["created_at", "2020-01-29 16:31:00.410177"], ["updated_at", "2020-01-29 16:31:00.410177"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "movie_genres" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 2], ["genre_id", 2], ["created_at", "2020-01-29 16:31:00.415898"], ["updated_at", "2020-01-29 16:31:00.415898"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("original_title", "overview", "vote_average", "video", "poster_path", "backdrop_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["original_title", "superman"], ["overview", "a description goes here"], ["vote_average", 3], ["video", "urlpath"], ["poster_path", "posterurl"], ["backdrop_path", "backdropurl"], ["created_at", "2020-01-29 16:31:00.421397"], ["updated_at", "2020-01-29 16:31:00.421397"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "name", "bio", "img", "region", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "mrh9ud"], ["password", "password"], ["name", "matt"], ["bio", "something about a person"], ["img", "profileURL"], ["region", "Central VA"], ["created_at", "2020-01-29 16:31:00.425834"], ["updated_at", "2020-01-29 16:31:00.425834"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "action"], ["created_at", "2020-01-29 16:31:00.450123"], ["updated_at", "2020-01-29 16:31:00.450123"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Create (0.6ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["movie_id", 3], ["created_at", "2020-01-29 16:31:00.454773"], ["updated_at", "2020-01-29 16:31:00.454773"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Create (0.6ms)[0m  [1m[32mINSERT INTO "watch_lists" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["movie_id", 3], ["created_at", "2020-01-29 16:31:00.459184"], ["updated_at", "2020-01-29 16:31:00.459184"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "movie_genres" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 3], ["genre_id", 3], ["created_at", "2020-01-29 16:31:00.463399"], ["updated_at", "2020-01-29 16:31:00.463399"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("original_title", "overview", "vote_average", "video", "poster_path", "backdrop_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["original_title", "spiderman"], ["overview", "a description goes here"], ["vote_average", 3], ["video", "urlpath"], ["poster_path", "posterurl"], ["backdrop_path", "backdropurl"], ["created_at", "2020-01-29 16:31:00.467640"], ["updated_at", "2020-01-29 16:31:00.467640"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "name", "bio", "img", "region", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "mrh9ud"], ["password", "password"], ["name", "matt"], ["bio", "something about a person"], ["img", "profileURL"], ["region", "Central VA"], ["created_at", "2020-01-29 16:31:00.471755"], ["updated_at", "2020-01-29 16:31:00.471755"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "action"], ["created_at", "2020-01-29 16:31:00.475831"], ["updated_at", "2020-01-29 16:31:00.475831"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Create (0.6ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["movie_id", 4], ["created_at", "2020-01-29 16:31:00.479837"], ["updated_at", "2020-01-29 16:31:00.479837"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Create (0.6ms)[0m  [1m[32mINSERT INTO "watch_lists" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["movie_id", 4], ["created_at", "2020-01-29 16:31:00.484336"], ["updated_at", "2020-01-29 16:31:00.484336"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "movie_genres" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 4], ["genre_id", 4], ["created_at", "2020-01-29 16:31:00.488675"], ["updated_at", "2020-01-29 16:31:00.488675"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("original_title", "overview", "vote_average", "video", "poster_path", "backdrop_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["original_title", "joker"], ["overview", "a description goes here"], ["vote_average", 3], ["video", "urlpath"], ["poster_path", "posterurl"], ["backdrop_path", "backdropurl"], ["created_at", "2020-01-29 16:31:00.492730"], ["updated_at", "2020-01-29 16:31:00.492730"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "name", "bio", "img", "region", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "mrh9ud"], ["password", "password"], ["name", "matt"], ["bio", "something about a person"], ["img", "profileURL"], ["region", "Central VA"], ["created_at", "2020-01-29 16:31:00.496441"], ["updated_at", "2020-01-29 16:31:00.496441"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "action"], ["created_at", "2020-01-29 16:31:00.500367"], ["updated_at", "2020-01-29 16:31:00.500367"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Create (0.7ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 5], ["movie_id", 5], ["created_at", "2020-01-29 16:31:00.504101"], ["updated_at", "2020-01-29 16:31:00.504101"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Create (0.6ms)[0m  [1m[32mINSERT INTO "watch_lists" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 5], ["movie_id", 5], ["created_at", "2020-01-29 16:31:00.508365"], ["updated_at", "2020-01-29 16:31:00.508365"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "movie_genres" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 5], ["genre_id", 5], ["created_at", "2020-01-29 16:31:00.512514"], ["updated_at", "2020-01-29 16:31:00.512514"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-01-29 11:31:38 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.8ms | Allocations: 483)
+Completed 200 OK in 32ms (Views: 24.0ms | ActiveRecord: 0.0ms | Allocations: 2643)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 11:31:41 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (1.0ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.7ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (1.4ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.4ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.6ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.6ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (1.2ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.4ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.5ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+Completed 200 OK in 275ms (Views: 0.2ms | ActiveRecord: 62.7ms | Allocations: 60009)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 12:40:55 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.6ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (1.0ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.4ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.4ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.3ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.3ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.7ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.4ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+Completed 200 OK in 73ms (Views: 0.9ms | ActiveRecord: 11.6ms | Allocations: 22727)
+
+
+Started GET "/" for ::1 at 2020-01-29 14:10:16 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.5ms | Allocations: 196)
+Completed 200 OK in 29ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 731)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 14:10:19 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.8ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.4ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.7ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.3ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.8ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.6ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.4ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+Completed 200 OK in 78ms (Views: 0.5ms | ActiveRecord: 12.4ms | Allocations: 22733)
+
+
+Started GET "/" for ::1 at 2020-01-29 14:18:45 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 8)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 14:47:30 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.8ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.6ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.6ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.4ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.5ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.7ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mWatchList Load (0.4ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists" WHERE "watch_lists"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mMovieGenre Load (0.5ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `index'
+Completed 200 OK in 187ms (Views: 0.3ms | ActiveRecord: 50.2ms | Allocations: 59998)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Destroy (0.6ms)[0m  [1m[31mDELETE FROM "movie_genres" WHERE "movie_genres"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movie_genres" WHERE "movie_genres"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movie_genres" WHERE "movie_genres"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movie_genres" WHERE "movie_genres"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mWatchList Load (0.8ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Destroy (0.4ms)[0m  [1m[31mDELETE FROM "watch_lists" WHERE "watch_lists"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Destroy (0.3ms)[0m  [1m[31mDELETE FROM "watch_lists" WHERE "watch_lists"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Destroy (0.3ms)[0m  [1m[31mDELETE FROM "watch_lists" WHERE "watch_lists"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Destroy (0.3ms)[0m  [1m[31mDELETE FROM "watch_lists" WHERE "watch_lists"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Destroy (0.4ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Destroy (1.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Destroy (0.8ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Destroy (0.8ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Destroy (0.8ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Destroy (0.8ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (1.0ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (1.0ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5043.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "CineSearch_development"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5039.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "CineSearch_development"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5043.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "CineSearch_development"[0m
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (64.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "CineSearch_development"[0m
+  [1m[35m (64.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "CineSearch_test"[0m
+  [1m[35m (304.7ms)[0m  [1m[35mCREATE DATABASE "CineSearch_development" ENCODING = 'unicode'[0m
+  [1m[35m (125.0ms)[0m  [1m[35mCREATE DATABASE "CineSearch_test" ENCODING = 'unicode'[0m
+  [1m[35m (35.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3308238945051719175)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200128204639)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password" character varying, "name" character varying, "birthday" timestamp, "bio" text, "img" character varying, "region" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200128204639"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMovies (20200128205121)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "movies" ("id" bigserial primary key, "original_title" character varying, "release_date" timestamp, "overview" character varying, "vote_average" integer, "video" character varying, "poster_path" character varying, "backdrop_path" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200128205121"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGenres (20200128205134)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200128205134"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFavorites (20200128205401)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" bigserial primary key, "user_id" bigint NOT NULL, "movie_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_d15744e438"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_2f96619ba3"
+FOREIGN KEY ("movie_id")
+  REFERENCES "movies" ("id")
+)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE  INDEX  "index_favorites_on_user_id" ON "favorites"  ("user_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_favorites_on_movie_id" ON "favorites"  ("movie_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200128205401"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWatchLists (20200128205558)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "watch_lists" ("id" bigserial primary key, "user_id" bigint NOT NULL, "movie_id" bigint NOT NULL, "watched" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_2c898f58d9"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_26f3053605"
+FOREIGN KEY ("movie_id")
+  REFERENCES "movies" ("id")
+)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_watch_lists_on_user_id" ON "watch_lists"  ("user_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_watch_lists_on_movie_id" ON "watch_lists"  ("movie_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200128205558"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMovieGenres (20200128205642)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "movie_genres" ("id" bigserial primary key, "movie_id" bigint NOT NULL, "genre_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e153f3c39b"
+FOREIGN KEY ("movie_id")
+  REFERENCES "movies" ("id")
+, CONSTRAINT "fk_rails_6f8a28d404"
+FOREIGN KEY ("genre_id")
+  REFERENCES "genres" ("id")
+)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_movie_genres_on_movie_id" ON "movie_genres"  ("movie_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_movie_genres_on_genre_id" ON "movie_genres"  ("genre_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200128205642"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-29 19:58:11.242108"], ["updated_at", "2020-01-29 19:58:11.242108"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3308238945051719175)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (1.1ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.9ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (1.4ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (1.7ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (1.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (1.0ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (1.0ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.8ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (1.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (1.1ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.9ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (1.1ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.8ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.8ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.8ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (4.6ms)[0m  [1m[32mINSERT INTO "movies" ("original_title", "overview", "vote_average", "video", "poster_path", "backdrop_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["original_title", "batman"], ["overview", "a description goes here"], ["vote_average", 3], ["video", "urlpath"], ["poster_path", "posterurl"], ["backdrop_path", "backdropurl"], ["created_at", "2020-01-29 21:49:42.588697"], ["updated_at", "2020-01-29 21:49:42.588697"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "name", "bio", "img", "region", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "mrh9ud"], ["password", "password"], ["name", "matt"], ["bio", "something about a person"], ["img", "profileURL"], ["region", "Central VA"], ["created_at", "2020-01-29 21:49:42.609617"], ["updated_at", "2020-01-29 21:49:42.609617"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "action"], ["created_at", "2020-01-29 21:49:42.621427"], ["updated_at", "2020-01-29 21:49:42.621427"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Create (2.8ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["movie_id", 1], ["created_at", "2020-01-29 21:49:42.636121"], ["updated_at", "2020-01-29 21:49:42.636121"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Create (1.1ms)[0m  [1m[32mINSERT INTO "watch_lists" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["movie_id", 1], ["created_at", "2020-01-29 21:49:42.651438"], ["updated_at", "2020-01-29 21:49:42.651438"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Create (2.1ms)[0m  [1m[32mINSERT INTO "movie_genres" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 1], ["genre_id", 1], ["created_at", "2020-01-29 21:49:42.663347"], ["updated_at", "2020-01-29 21:49:42.663347"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("original_title", "overview", "vote_average", "video", "poster_path", "backdrop_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["original_title", "superman"], ["overview", "a description goes here"], ["vote_average", 3], ["video", "urlpath"], ["poster_path", "posterurl"], ["backdrop_path", "backdropurl"], ["created_at", "2020-01-29 21:49:42.669435"], ["updated_at", "2020-01-29 21:49:42.669435"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "name", "bio", "img", "region", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "mrh9ud"], ["password", "password"], ["name", "matt"], ["bio", "something about a person"], ["img", "profileURL"], ["region", "Central VA"], ["created_at", "2020-01-29 21:49:42.674581"], ["updated_at", "2020-01-29 21:49:42.674581"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "action"], ["created_at", "2020-01-29 21:49:42.679452"], ["updated_at", "2020-01-29 21:49:42.679452"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Create (0.7ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["movie_id", 2], ["created_at", "2020-01-29 21:49:42.683860"], ["updated_at", "2020-01-29 21:49:42.683860"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Create (0.6ms)[0m  [1m[32mINSERT INTO "watch_lists" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["movie_id", 2], ["created_at", "2020-01-29 21:49:42.688675"], ["updated_at", "2020-01-29 21:49:42.688675"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "movie_genres" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 2], ["genre_id", 2], ["created_at", "2020-01-29 21:49:42.693037"], ["updated_at", "2020-01-29 21:49:42.693037"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("original_title", "overview", "vote_average", "video", "poster_path", "backdrop_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["original_title", "spiderman"], ["overview", "a description goes here"], ["vote_average", 3], ["video", "urlpath"], ["poster_path", "posterurl"], ["backdrop_path", "backdropurl"], ["created_at", "2020-01-29 21:49:42.697062"], ["updated_at", "2020-01-29 21:49:42.697062"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "name", "bio", "img", "region", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "mrh9ud"], ["password", "password"], ["name", "matt"], ["bio", "something about a person"], ["img", "profileURL"], ["region", "Central VA"], ["created_at", "2020-01-29 21:49:42.721135"], ["updated_at", "2020-01-29 21:49:42.721135"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "action"], ["created_at", "2020-01-29 21:49:42.725384"], ["updated_at", "2020-01-29 21:49:42.725384"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Create (0.6ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["movie_id", 3], ["created_at", "2020-01-29 21:49:42.729378"], ["updated_at", "2020-01-29 21:49:42.729378"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Create (0.6ms)[0m  [1m[32mINSERT INTO "watch_lists" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["movie_id", 3], ["created_at", "2020-01-29 21:49:42.733572"], ["updated_at", "2020-01-29 21:49:42.733572"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "movie_genres" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 3], ["genre_id", 3], ["created_at", "2020-01-29 21:49:42.737826"], ["updated_at", "2020-01-29 21:49:42.737826"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("original_title", "overview", "vote_average", "video", "poster_path", "backdrop_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["original_title", "joker"], ["overview", "a description goes here"], ["vote_average", 3], ["video", "urlpath"], ["poster_path", "posterurl"], ["backdrop_path", "backdropurl"], ["created_at", "2020-01-29 21:49:42.741839"], ["updated_at", "2020-01-29 21:49:42.741839"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "name", "bio", "img", "region", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "mrh9ud"], ["password", "password"], ["name", "matt"], ["bio", "something about a person"], ["img", "profileURL"], ["region", "Central VA"], ["created_at", "2020-01-29 21:49:42.745829"], ["updated_at", "2020-01-29 21:49:42.745829"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "action"], ["created_at", "2020-01-29 21:49:42.749604"], ["updated_at", "2020-01-29 21:49:42.749604"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Create (1.5ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["movie_id", 4], ["created_at", "2020-01-29 21:49:42.753861"], ["updated_at", "2020-01-29 21:49:42.753861"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Create (0.7ms)[0m  [1m[32mINSERT INTO "watch_lists" ("user_id", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["movie_id", 4], ["created_at", "2020-01-29 21:49:42.759889"], ["updated_at", "2020-01-29 21:49:42.759889"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "movie_genres" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 4], ["genre_id", 4], ["created_at", "2020-01-29 21:49:42.765124"], ["updated_at", "2020-01-29 21:49:42.765124"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/movies" for ::1 at 2020-01-29 16:57:27 -0500
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+Completed 500 Internal Server Error in 181ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 3415)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/movies_controller.rb:11:in `block in index'
+app/controllers/movies_controller.rb:10:in `each'
+app/controllers/movies_controller.rb:10:in `index'
+Started GET "/" for ::1 at 2020-01-29 16:57:29 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.4ms | Allocations: 318)
+Completed 200 OK in 21ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 1600)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 16:57:33 -0500
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 225ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2658)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/movies_controller.rb:11:in `block in index'
+app/controllers/movies_controller.rb:10:in `each'
+app/controllers/movies_controller.rb:10:in `index'
+Started GET "/movies" for ::1 at 2020-01-29 16:58:46 -0500
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 65ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2751)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/movies_controller.rb:10:in `block in index'
+app/controllers/movies_controller.rb:9:in `each'
+app/controllers/movies_controller.rb:9:in `index'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (1.0ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Destroy (0.6ms)[0m  [1m[31mDELETE FROM "movie_genres" WHERE "movie_genres"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movie_genres" WHERE "movie_genres"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movie_genres" WHERE "movie_genres"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovieGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movie_genres" WHERE "movie_genres"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mWatchList Load (0.9ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Destroy (0.4ms)[0m  [1m[31mDELETE FROM "watch_lists" WHERE "watch_lists"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Destroy (0.3ms)[0m  [1m[31mDELETE FROM "watch_lists" WHERE "watch_lists"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Destroy (0.3ms)[0m  [1m[31mDELETE FROM "watch_lists" WHERE "watch_lists"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWatchList Destroy (0.3ms)[0m  [1m[31mDELETE FROM "watch_lists" WHERE "watch_lists"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mFavorite Load (0.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Destroy (0.4ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Destroy (1.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Destroy (0.8ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Destroy (0.8ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Destroy (0.8ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (1.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Destroy (0.7ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.7ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+Started GET "/movies" for ::1 at 2020-01-29 17:00:49 -0500
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 68ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 2696)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/movies_controller.rb:10:in `block in index'
+app/controllers/movies_controller.rb:9:in `each'
+app/controllers/movies_controller.rb:9:in `index'
+Started GET "/movies" for ::1 at 2020-01-29 17:06:37 -0500
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 74ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2726)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/movies_controller.rb:10:in `block in index'
+app/controllers/movies_controller.rb:9:in `each'
+app/controllers/movies_controller.rb:9:in `index'
+Started GET "/movies" for ::1 at 2020-01-29 17:13:01 -0500
+Processing by MoviesController#index as HTML
+Completed 200 OK in 105ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2827)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:13:46 -0500
+Processing by MoviesController#index as HTML
+Completed 200 OK in 47ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 2798)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:14:27 -0500
+Processing by MoviesController#index as HTML
+Completed 200 OK in 57ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 2836)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:17:22 -0500
+Processing by MoviesController#index as HTML
+Completed 200 OK in 74ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2769)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:17:50 -0500
+Processing by MoviesController#index as HTML
+Completed 200 OK in 57ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 2779)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:18:07 -0500
+Processing by MoviesController#index as HTML
+Completed 200 OK in 57ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 3069)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:19:33 -0500
+Processing by MoviesController#index as HTML
+Completed 200 OK in 75ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4594)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:22:20 -0500
+Processing by MoviesController#index as HTML
+Completed 200 OK in 88ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4552)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:22:53 -0500
+Processing by MoviesController#index as HTML
+Completed 200 OK in 117ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 4873)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:23:19 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 86ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4854)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:24:52 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 90ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 4850)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:25:01 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 76ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4859)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:31:57 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 82ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4856)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:32:05 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 76ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4850)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:35:56 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 228ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4854)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:39:40 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 91ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4857)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:41:10 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 72ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4852)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:41:29 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 67ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4852)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:41:43 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 347ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4850)
+
+
+Started GET "/movies" for ::1 at 2020-01-29 17:42:44 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 73ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4852)
+
+

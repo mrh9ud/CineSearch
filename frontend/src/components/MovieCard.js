@@ -1,25 +1,56 @@
 import React from 'react'
-import { Card, Image } from 'semantic-ui-react'
+import { Card, Image, Button } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 class MovieCard extends React.Component {
+    state = {
+        detailsActive: false
+    }
+
+    handleDetailsClick = () => {
+        this.setState({ detailsActive: !this.state.detailsActive})
+    }
+
     render() {
+        let { id, poster_path, original_title, release_date, overview, vote_average } = this.props.movie
+        
         return (
             <React.Fragment>
-                {console.log(this.props)}
                 <Card>
-                    <Image src={this.props.movie.backdrop_path} wrapped ui={false} />
-                    <Card.Content>
-                        <Card.Header>{this.props.movie.original_title}</Card.Header>
-                        <Card.Meta>
-                            <span className='date'>Release Date: {this.props.movie.release_date}</span>
-                        </Card.Meta>
-                        <Card.Description>
-                            {this.props.movie.overview}
-                        </Card.Description>
-                    </Card.Content>
-                    <Card.Content extra>
-                        Rating: {this.props.movie.vote_average}
-                    </Card.Content>
+                    <Image src={poster_path} wrapped ui={false} />
+                    {this.state.detailsActive 
+                    ?
+                    <React.Fragment>
+                        <Card.Content>
+                        <Card.Header>{original_title}</Card.Header>
+                            <Card.Meta>
+                                <span className='date'>Release Date: {release_date}</span>
+                            </Card.Meta>
+                            <Card.Description>
+                                {overview}
+                            </Card.Description>
+                        </Card.Content>
+                        <Card.Content extra>
+                            Rating: {vote_average}
+                        </Card.Content>
+                    </React.Fragment>
+                    : 
+                    null}
+                    {this.state.detailsActive 
+                    ? 
+                    <Link to={`/movies/${id}`} >
+                        <Button 
+                            position="float left"
+                            >More Info
+                        </Button>
+                    </Link>
+                    :
+                    <Button 
+                        position="left" 
+                        onClick={this.handleDetailsClick}
+                        >Details
+                    </Button>
+                    }
                 </Card>
                 
             </React.Fragment>

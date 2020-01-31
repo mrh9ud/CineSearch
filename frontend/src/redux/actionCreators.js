@@ -1,19 +1,24 @@
-import { FETCHED_RECOMMENDED_MOVIES, LOADING_RECOMMENDED_MOVIES } from './actionType'
+import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES } from './actionType'
 
-const URL = 'http://localhost:3000/movies'
+const movieRecURL = 'http://localhost:3000/movies'
+const movieSearchURL ='http://localhost:3000/search'
 
 function fetchedRecommendedMovies(recommendedMoviesArray) {
-    return {type: FETCHED_RECOMMENDED_MOVIES, payload: recommendedMoviesArray}
+    return { type: FETCHED_RECOMMENDED_MOVIES, payload: recommendedMoviesArray }
 }
 
-function loadingRecommendedMovies() {
-    return {type: LOADING_RECOMMENDED_MOVIES}
+function fetchedSearchedMovies(searchedMoviesArray) {
+    return { type: FETCHED_SEARCHED_MOVIES, payload: searchedMoviesArray }
+}
+
+function loading() {
+    return {type: LOADING}
 }
 
 function fetchingRecommendedMovies() {
     return (dispatch) => {
-        dispatch(loadingRecommendedMovies())
-        fetch(URL)
+        dispatch(loading())
+        fetch(movieRecURL)
         .then(res => res.json())
         .then(recommendedMoviesArray => {
             dispatch(fetchedRecommendedMovies(recommendedMoviesArray))
@@ -21,4 +26,25 @@ function fetchingRecommendedMovies() {
     }
 }
 
-export { fetchingRecommendedMovies }
+function fetchingSearchedMovies(searchTerm) {
+    const configObj = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            searchTerm
+        })
+    }
+    return (dispatch) => {
+        dispatch(loading())
+        fetch(movieSearchURL, configObj)
+        .then(res => res.json())
+        .then(searchedMoviesArray => {
+            dispatch(fetchedSearchedMovies(searchedMoviesArray))
+        })
+    }
+}
+
+export { fetchingRecommendedMovies, fetchingSearchedMovies }

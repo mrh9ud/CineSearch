@@ -7,22 +7,22 @@ class NavBar extends React.Component {
         return (
             <React.Fragment>
             <Menu id="bandmates-nav-bar" inverted>
-                <NavLink to='/' exact>
+                <NavLink to='/movies'>
                     <Menu.Item name='logo'>CineSearch</Menu.Item>
                 </NavLink>
 
-                <NavLink to='/movies' exact>
+                <NavLink to='/movies'>
                     <Menu.Item name='movies'>Browse Movies</Menu.Item>
                 </NavLink>
 
-                <NavLink to='/watchlist' exact>
-                    <Menu.Item name='musicians'>Watch List</Menu.Item>
-                </NavLink>
-
-                <NavLink to='/favorites' exact>
+                <NavLink to='/favorites'>
                     <Menu.Item name='favorites'>Favorites</Menu.Item>
                 </NavLink>
-
+                
+                <NavLink to='/watchlist'>
+                    <Menu.Item name='musicians'>Watch List</Menu.Item>
+                </NavLink>
+                
                 <Menu.Menu position="right" >
                     <Menu.Item>
                         <React.Fragment>

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :watch_lists
   resources :favorites
   resources :genres
-  resources :movies
+  resources :movies, only: [:show, :index]
   resources :users
-  post '/movies', to: 'movies#search'
+  post '/search', to: 'movies#search'
 
 end

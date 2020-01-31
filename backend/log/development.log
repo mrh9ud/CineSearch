@@ -1339,3 +1339,1779 @@ Processing by MoviesController#index as */*
 Completed 200 OK in 73ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4852)
 
 
+Started GET "/movies" for ::1 at 2020-01-30 10:10:26 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+Completed 200 OK in 180ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 5564)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (3.5ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (1.3ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (1.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.9ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (1.1ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (2.0ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (1.0ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (1.0ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+Started GET "/movies" for ::1 at 2020-01-30 10:24:00 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 88ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2825)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:26:48 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 97ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 2821)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:27:54 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 66ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 2794)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:28:39 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 92ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 2796)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (1.0ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.9ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.7ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.9ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.8ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (1.4ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.9ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (1.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.7ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovieGenre Load (0.8ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mWatchList Load (0.7ms)[0m  [1m[34mSELECT "watch_lists".* FROM "watch_lists"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+Started GET "/movies" for ::1 at 2020-01-30 10:43:10 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 85ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4952)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:44:12 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 73ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4892)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:46:31 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 104ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4892)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:48:00 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 282ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4892)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:50:12 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 88ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4896)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:50:45 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 133ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4890)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:54:21 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 87ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4597)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:55:20 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 77ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4570)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:55:32 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 106ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4572)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:56:13 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 313ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4995)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:58:07 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 94ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 10:58:23 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 70ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 11:00:56 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 103ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 11:02:15 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 87ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 11:18:02 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+Completed 200 OK in 130ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 5677)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 11:18:20 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 146ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4937)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 11:20:14 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 328ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 11:22:57 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 251ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4939)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 11:23:45 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 192ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 11:24:30 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 112ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 4936)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 11:24:38 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 139ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4936)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 11:42:26 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 108ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 11:55:27 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 183ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4935)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 11:59:42 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 117ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:00:59 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 206ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:02:00 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 79ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4935)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:02:06 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 65ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4936)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:02:24 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 88ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:02:32 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 73ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:02:56 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 61ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:06:46 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 74ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:08:25 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 298ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:08:29 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 75ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:10:07 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 98ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:10:25 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 55ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4971)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:54 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 227ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:56 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 342ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:57 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 202ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:57 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 123ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4928)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:57 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 160ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:57 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 63ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:57 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 60ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4928)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:58 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 67ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4931)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:58 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 180ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4929)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:58 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 220ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4928)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:58 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 176ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:58 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 69ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4928)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:58 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 78ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4928)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:59 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 73ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4956)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:59 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 68ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:59 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 462ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4929)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:12:59 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 407ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:13:00 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 334ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:13:00 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 158ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:13:00 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 256ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:13:00 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 299ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:13:01 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 660ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4937)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:13:01 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 182ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4928)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:14:08 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 66ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:17:37 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 350ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:17:42 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 321ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:17:47 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 158ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:17:50 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 203ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:17:53 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 153ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:19:33 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 101ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started GET "/movies/search" for ::1 at 2020-01-30 12:20:42 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for MoviesController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2020-01-30 12:24:49 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 210ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 4955)
+
+
+Started GET "/movies/search" for ::1 at 2020-01-30 12:24:57 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for MoviesController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2020-01-30 12:25:18 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 366ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4992)
+
+
+Started GET "/movies/search" for ::1 at 2020-01-30 12:25:21 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for MoviesController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2020-01-30 12:28:55 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+Completed 200 OK in 349ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 5676)
+
+
+Started GET "/movies/search" for ::1 at 2020-01-30 12:28:58 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for MoviesController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2020-01-30 12:29:18 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 85ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4939)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:30:09 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 65ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4958)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:31:41 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/movies"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2020-01-30 12:31:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/movies"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2020-01-30 12:34:06 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/movies"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2020-01-30 12:34:29 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+Completed 200 OK in 92ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 5677)
+
+
+Started GET "/movies/search" for ::1 at 2020-01-30 12:34:31 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for MoviesController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2020-01-30 12:34:43 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 154ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:35:06 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 69ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4935)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:35:12 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 65ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4936)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:35:20 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 67ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:37:04 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+Completed 200 OK in 96ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 5675)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:37:07 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 95ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:37:11 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 139ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4935)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:37:26 -0500
+Processing by MoviesController#search as */*
+Started GET "/search" for ::1 at 2020-01-30 12:38:37 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#search as HTML
+Started GET "/movies" for ::1 at 2020-01-30 12:43:37 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+Completed 200 OK in 344ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 5675)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:43:41 -0500
+Processing by MoviesController#search as */*
+Started GET "/search" for ::1 at 2020-01-30 12:45:35 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#search as */*
+Completed 204 No Content in 133ms (ActiveRecord: 0.0ms | Allocations: 3494)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:46:39 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 59ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4998)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:46:41 -0500
+Processing by MoviesController#search as */*
+  [1m[36mMovie Load (5.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:28:in `search'
+Completed 200 OK in 122ms (Views: 5.5ms | ActiveRecord: 10.6ms | Allocations: 7845)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:46:43 -0500
+Processing by MoviesController#search as */*
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:28:in `search'
+Completed 200 OK in 204ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 3601)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:46:44 -0500
+Processing by MoviesController#search as */*
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:28:in `search'
+Completed 200 OK in 72ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 3598)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:46:44 -0500
+Processing by MoviesController#search as */*
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:28:in `search'
+Completed 200 OK in 60ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 3574)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:46:44 -0500
+Processing by MoviesController#search as */*
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:28:in `search'
+Completed 200 OK in 93ms (Views: 2.0ms | ActiveRecord: 0.6ms | Allocations: 3576)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:46:44 -0500
+Processing by MoviesController#search as */*
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:28:in `search'
+Completed 200 OK in 94ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 3576)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:46:44 -0500
+Processing by MoviesController#search as */*
+  [1m[36mMovie Load (1.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:28:in `search'
+Completed 200 OK in 98ms (Views: 2.3ms | ActiveRecord: 1.5ms | Allocations: 3578)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:46:44 -0500
+Processing by MoviesController#search as */*
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:28:in `search'
+Completed 200 OK in 90ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 3574)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:46:44 -0500
+Processing by MoviesController#search as */*
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:28:in `search'
+Completed 200 OK in 70ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 3576)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:47:18 -0500
+Processing by MoviesController#search as */*
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:28:in `search'
+Completed 200 OK in 90ms (Views: 3.2ms | ActiveRecord: 3.5ms | Allocations: 7406)
+
+
+Started GET "/search" for ::1 at 2020-01-30 12:47:44 -0500
+Processing by MoviesController#search as */*
+Started GET "/movies" for ::1 at 2020-01-30 12:52:10 -0500
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+Completed 200 OK in 213ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 5675)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:52:47 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 80ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4935)
+
+
+Started POST "/search" for ::1 at 2020-01-30 12:53:07 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/search"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2020-01-30 12:53:53 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+Completed 200 OK in 159ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 5676)
+
+
+Started POST "/search" for ::1 at 2020-01-30 12:53:55 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"dddd", "movie"=>{}}
+Started GET "/movies" for ::1 at 2020-01-30 12:55:00 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+Completed 200 OK in 73ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5679)
+
+
+Started POST "/search" for ::1 at 2020-01-30 12:55:02 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"ddd", "movie"=>{}}
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:31:in `search'
+Completed 200 OK in 7275ms (Views: 2.0ms | ActiveRecord: 4.9ms | Allocations: 47090)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 12:57:30 -0500
+  
+SyntaxError (/Users/flatironschool/Documents/mod5/CineSearch/backend/app/controllers/movies_controller.rb:34: syntax error, unexpected end, expecting ')'
+    end
+    ^~~):
+  
+app/controllers/movies_controller.rb:34: syntax error, unexpected end, expecting ')'
+app/controllers/movies_controller.rb:34: syntax error, unexpected end, expecting ')'
+Started GET "/movies" for ::1 at 2020-01-30 12:57:52 -0500
+  
+SyntaxError (/Users/flatironschool/Documents/mod5/CineSearch/backend/app/controllers/movies_controller.rb:34: syntax error, unexpected end, expecting ')'
+    end
+    ^~~):
+  
+app/controllers/movies_controller.rb:34: syntax error, unexpected end, expecting ')'
+app/controllers/movies_controller.rb:34: syntax error, unexpected end, expecting ')'
+Started GET "/movies" for ::1 at 2020-01-30 13:01:32 -0500
+  
+SyntaxError (/Users/flatironschool/Documents/mod5/CineSearch/backend/app/controllers/movies_controller.rb:34: syntax error, unexpected end, expecting ')'
+    end
+    ^~~):
+  
+app/controllers/movies_controller.rb:34: syntax error, unexpected end, expecting ')'
+app/controllers/movies_controller.rb:34: syntax error, unexpected end, expecting ')'
+Started GET "/movies" for ::1 at 2020-01-30 14:00:08 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 106ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 5005)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:00:13 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 8.4ms | Allocations: 2463)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/movies_controller.rb:26:in `+'
+app/controllers/movies_controller.rb:26:in `block in search'
+app/controllers/movies_controller.rb:24:in `each'
+app/controllers/movies_controller.rb:24:in `search'
+Started GET "/search" for ::1 at 2020-01-30 14:01:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/search"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2020-01-30 14:02:30 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 187ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4991)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 14:02:37 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 93ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:02:53 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"ddddddddggggg", "movie"=>{}}
+Completed 200 OK in 92ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1929)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 14:04:14 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 72ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:04:26 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"l", "movie"=>{}}
+Completed 500 Internal Server Error in 215ms (ActiveRecord: 0.0ms | Allocations: 2405)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/movies_controller.rb:26:in `+'
+app/controllers/movies_controller.rb:26:in `block in search'
+app/controllers/movies_controller.rb:24:in `each'
+app/controllers/movies_controller.rb:24:in `search'
+Started GET "/movies" for ::1 at 2020-01-30 14:04:53 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 534ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:05:50 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 500 Internal Server Error in 335ms (ActiveRecord: 5.0ms | Allocations: 2951)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/movies_controller.rb:26:in `+'
+app/controllers/movies_controller.rb:26:in `block in search'
+app/controllers/movies_controller.rb:24:in `each'
+app/controllers/movies_controller.rb:24:in `search'
+Started GET "/movies" for ::1 at 2020-01-30 14:08:25 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 80ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4969)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:08:28 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"nothing", "movie"=>{}}
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 4.5ms | Allocations: 2554)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/movies_controller.rb:26:in `+'
+app/controllers/movies_controller.rb:26:in `block in search'
+app/controllers/movies_controller.rb:24:in `each'
+app/controllers/movies_controller.rb:24:in `search'
+Started GET "/movies" for ::1 at 2020-01-30 14:11:11 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 188ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4967)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:11:17 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 5.2ms | Allocations: 2901)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/movies_controller.rb:26:in `+'
+app/controllers/movies_controller.rb:26:in `block in search'
+app/controllers/movies_controller.rb:24:in `each'
+app/controllers/movies_controller.rb:24:in `search'
+Started GET "/movies" for ::1 at 2020-01-30 14:12:35 -0500
+Processing by MoviesController#index as */*
+Completed 500 Internal Server Error in 508ms (ActiveRecord: 0.0ms | Allocations: 72588)
+
+
+  
+NameError (undefined local variable or method `datatoRender' for #<MoviesController:0x00007f89ad2708d8>
+Did you mean?  dataToRender):
+  
+app/controllers/movies_controller.rb:13:in `index'
+Started GET "/movies" for ::1 at 2020-01-30 14:14:54 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+Completed 200 OK in 169ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 6303)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:15:46 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"ddddd", "movie"=>{}}
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 3.5ms | Allocations: 1991)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/movies_controller.rb:26:in `+'
+app/controllers/movies_controller.rb:26:in `block in search'
+app/controllers/movies_controller.rb:25:in `each'
+app/controllers/movies_controller.rb:25:in `search'
+Started GET "/movies" for ::1 at 2020-01-30 14:17:38 -0500
+  
+SyntaxError (/Users/flatironschool/Documents/mod5/CineSearch/backend/app/controllers/movies_controller.rb:35: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/movies_controller.rb:35: syntax error, unexpected end, expecting end-of-input
+app/controllers/movies_controller.rb:35: syntax error, unexpected end, expecting end-of-input
+Started GET "/movies" for ::1 at 2020-01-30 14:18:05 -0500
+  
+SyntaxError (/Users/flatironschool/Documents/mod5/CineSearch/backend/app/controllers/movies_controller.rb:35: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/movies_controller.rb:35: syntax error, unexpected end, expecting end-of-input
+app/controllers/movies_controller.rb:35: syntax error, unexpected end, expecting end-of-input
+Started GET "/movies" for ::1 at 2020-01-30 14:19:56 -0500
+  
+SyntaxError (/Users/flatironschool/Documents/mod5/CineSearch/backend/app/controllers/movies_controller.rb:36: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/movies_controller.rb:36: syntax error, unexpected end, expecting end-of-input
+app/controllers/movies_controller.rb:36: syntax error, unexpected end, expecting end-of-input
+Started GET "/movies" for ::1 at 2020-01-30 14:20:27 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 254ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5659)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 14:20:58 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 99ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4957)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 14:22:31 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 94ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4957)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:22:49 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 3.6ms | Allocations: 2407)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/movies_controller.rb:26:in `[]'
+app/controllers/movies_controller.rb:26:in `block in search'
+app/controllers/movies_controller.rb:25:in `each'
+app/controllers/movies_controller.rb:25:in `search'
+Started GET "/movies" for ::1 at 2020-01-30 14:23:13 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 70ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4997)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:23:16 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 200 OK in 70ms (Views: 0.2ms | ActiveRecord: 3.7ms | Allocations: 3081)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 14:23:51 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 329ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4958)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:23:54 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 3.5ms | Allocations: 2485)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/movies_controller.rb:27:in `+'
+app/controllers/movies_controller.rb:27:in `block in search'
+app/controllers/movies_controller.rb:25:in `each'
+app/controllers/movies_controller.rb:25:in `search'
+Started GET "/movies" for ::1 at 2020-01-30 14:26:47 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 93ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 5000)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:26:50 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 3.4ms | Allocations: 2454)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/movies_controller.rb:27:in `+'
+app/controllers/movies_controller.rb:27:in `block in search'
+app/controllers/movies_controller.rb:25:in `each'
+app/controllers/movies_controller.rb:25:in `search'
+Started GET "/movies" for ::1 at 2020-01-30 14:27:35 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 81ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4957)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:27:38 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 500 Internal Server Error in 237ms (ActiveRecord: 6.3ms | Allocations: 72339)
+
+
+  
+NameError (undefined local variable or method `dataToRender' for #<MoviesController:0x00007fed0a1b9e10>):
+  
+app/controllers/movies_controller.rb:30:in `search'
+Started GET "/movies" for ::1 at 2020-01-30 14:27:51 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 116ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4994)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:27:54 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 200 OK in 78ms (Views: 0.2ms | ActiveRecord: 3.1ms | Allocations: 4714)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 14:30:18 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 318ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4997)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:30:20 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 3.4ms | Allocations: 2452)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/movies_controller.rb:27:in `+'
+app/controllers/movies_controller.rb:27:in `block in search'
+app/controllers/movies_controller.rb:25:in `each'
+app/controllers/movies_controller.rb:25:in `search'
+Started GET "/movies" for ::1 at 2020-01-30 14:32:46 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 95ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 4957)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:32:49 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 200 OK in 234ms (Views: 0.2ms | ActiveRecord: 3.5ms | Allocations: 4720)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 14:34:18 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 202ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4957)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:34:22 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 200 OK in 87ms (Views: 0.1ms | ActiveRecord: 3.5ms | Allocations: 4791)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 14:34:59 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 81ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4944)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:35:02 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 200 OK in 118ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4756)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:35:14 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"harry", "movie"=>{}}
+Completed 200 OK in 95ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4779)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:35:19 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"harry potter", "movie"=>{}}
+Completed 200 OK in 85ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4674)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:35:25 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"nonsense", "movie"=>{}}
+Completed 200 OK in 222ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4128)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 14:43:14 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 101ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4955)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:43:17 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"nonsense", "movie"=>{}}
+Completed 200 OK in 104ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4260)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:45:03 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"movie", "movie"=>{}}
+Completed 200 OK in 114ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4748)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 14:58:14 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 188ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4994)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:58:18 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"Batman", "movie"=>{}}
+Completed 200 OK in 89ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4763)
+
+
+Started POST "/search" for ::1 at 2020-01-30 14:58:23 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"Ryan", "movie"=>{}}
+Completed 200 OK in 88ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4751)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:00:28 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 115ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 4957)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:00:38 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 349ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:00:46 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 300ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:01:36 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 71ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:05:09 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 84ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:05:44 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 74ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:07:31 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 207ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:09:23 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 91ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:09:34 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 282ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:13:02 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 347ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:14:26 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 689ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4937)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:15:56 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 91ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4931)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:16:22 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 248ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started POST "/search" for ::1 at 2020-01-30 15:16:48 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"kyle", "movie"=>{}}
+Completed 200 OK in 101ms (Views: 0.2ms | ActiveRecord: 12.3ms | Allocations: 4435)
+
+
+Started POST "/search" for ::1 at 2020-01-30 15:17:03 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"chine", "movie"=>{}}
+Completed 200 OK in 149ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4695)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:18:20 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 405ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:19:44 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 523ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:21:25 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 187ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4931)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:24:55 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 411ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:25:07 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 105ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4931)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:25:11 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 481ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4931)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:26:37 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 409ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:27:37 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 263ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:28:07 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 200ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:29:52 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 444ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:38:23 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 90ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:38:32 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 231ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4968)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:39:39 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 303ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:40:36 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 278ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:44:57 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 142ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:45:10 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 77ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:46:29 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 113ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:46:56 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 67ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:47:21 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 568ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4931)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:48:23 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 66ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:48:27 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 216ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:48:53 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 319ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started POST "/search" for ::1 at 2020-01-30 15:49:07 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"gary", "movie"=>{}}
+Completed 200 OK in 100ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4732)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:49:53 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 91ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:50:05 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 219ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 4931)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:50:52 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 212ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 15:52:59 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 89ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 16:42:41 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 92ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 16:46:12 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 311ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4969)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 16:46:47 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 62ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4935)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 16:48:07 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 79ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 16:54:40 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 96ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 16:55:12 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 63ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 16:55:31 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 52ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 16:56:07 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 86ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:01:21 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 116ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:15:04 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 103ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:16:13 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 80ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 4931)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:17:34 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 84ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4935)
+
+
+Started POST "/search" for ::1 at 2020-01-30 17:18:44 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 200 OK in 125ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4763)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:21:38 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 84ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4937)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:24:27 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 83ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:26:32 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 69ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:26:47 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 57ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:46:27 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 87ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 4971)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:50:35 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 72ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:53:14 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 72ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:56:24 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 74ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:57:11 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 58ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:58:36 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 87ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:59:07 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 66ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4935)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:59:13 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 62ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:59:45 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 68ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 17:59:52 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 84ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 18:00:44 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 78ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 18:00:49 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 89ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 18:01:09 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 95ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 18:01:16 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 52ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 18:02:23 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 64ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 18:09:14 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 82ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4935)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 18:10:28 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 128ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4938)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 18:11:35 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 98ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4910)
+
+
+Started GET "/movies" for ::1 at 2020-01-30 18:11:44 -0500
+Processing by MoviesController#index as */*
+Completed 200 OK in 64ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started POST "/search" for ::1 at 2020-01-30 18:13:24 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"jjjjjjjj", "movie"=>{}}
+Completed 200 OK in 89ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1929)
+
+
+Started POST "/search" for ::1 at 2020-01-30 18:13:38 -0500
+Processing by MoviesController#search as JSON
+  Parameters: {"searchTerm"=>"batman", "movie"=>{}}
+Completed 200 OK in 102ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4767)
+
+

@@ -1,19 +1,24 @@
 import React from 'react'
 import MovieCard from '../components/MovieCard'
 import { connect } from 'react-redux'
+import { Card, Container } from 'semantic-ui-react'
 
 class MovieContainer extends React.Component {
     render() {
         return (
             <React.Fragment>
-                {this.props.recommendedMovies.map( movie => <MovieCard key={movie.id} movie={movie} />)}
+                <Container>
+                    <Card.Group className='stackable' itemsPerRow={4}>
+                        {this.props.moviesArray.map( movie => <MovieCard key={movie.id} movie={movie} />)}
+                    </Card.Group>
+                </Container>
             </React.Fragment>
         )
     }
 }
 
 const mapStateToProps = (store) => ({
-    recommendedMovies: store.recommendedMovies
+    moviesArray: store.moviesArray
 })
 
 export default connect(mapStateToProps)(MovieContainer)

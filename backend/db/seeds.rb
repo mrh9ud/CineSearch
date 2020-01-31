@@ -30,9 +30,12 @@ def getMovieRecommendations
     tmdb_key = ENV["TMDB_API_KEY"]
     movieRecommendations = RestClient.get("https://api.themoviedb.org/3/movie/525/recommendations?api_key=#{tmdb_key}&language=en-US&page=1")
     parsedMovieRecommendations = JSON.parse(movieRecommendations.body)
-    parsedMovieRecommendations['results'].each do |movie|
-        p movie #movie['id'], movie['original_title'], movie['release_date'], movie['genre_ids'], movie['overview'], movie['vote_average'], movie['video'], movie['poster_path'], movie['backdrop_path']
+    dataToRender = parsedMovieRecommendations['results'].each do |movie|
+        
+        movie['poster_path'] = "https://image.tmdb.org/t/p/w500" + movie['poster_path']
+        #p movie #movie['id'], movie['original_title'], movie['release_date'], movie['genre_ids'], movie['overview'], movie['vote_average'], movie['video'], movie['poster_path'], movie['backdrop_path']
     end
+    p dataToRender
 end
 
 # movieSearch()

@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux'
-import { FETCHED_RECOMMENDED_MOVIES } from './actionType'
+import { FETCHED_RECOMMENDED_MOVIES, FETCHED_SEARCHED_MOVIES } from './actionType'
 
 const moviesReducer = (oldState=[], action) => {
-    // console.log(action)
     switch(action.type) {
         case FETCHED_RECOMMENDED_MOVIES:
+            return action.payload
+        case FETCHED_SEARCHED_MOVIES:
             return action.payload
         default:
             return oldState
@@ -12,7 +13,7 @@ const moviesReducer = (oldState=[], action) => {
 }
 
 const rootReducer = combineReducers({
-    recommendedMovies: moviesReducer
+    moviesArray: moviesReducer
 })
 
 export default rootReducer

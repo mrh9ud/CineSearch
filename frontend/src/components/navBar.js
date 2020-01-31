@@ -1,6 +1,7 @@
 import React from 'react'
-import { Menu, Button } from 'semantic-ui-react'
+import { Menu, Button, Modal } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
+import LoginForm from './LoginForm'
 
 class NavBar extends React.Component {
     render() {
@@ -25,14 +26,17 @@ class NavBar extends React.Component {
                 
                 <Menu.Menu position="right" >
                     <Menu.Item>
-                        <React.Fragment>
-                        <Button >Log Out</Button>
-                        </React.Fragment>
+                        
+                        <Modal trigger={<Button circular={true}>Login</Button>}> 
+                            <Modal.Content image >
+                                <LoginForm />
+                            </Modal.Content>
+                        </Modal>
+
                     </Menu.Item>
                 </Menu.Menu>
               </Menu>
         </React.Fragment>
-        
         )
     }
 }

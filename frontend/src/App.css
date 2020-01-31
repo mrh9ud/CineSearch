@@ -30,6 +30,7 @@
 
 .search {
   padding-bottom: 10px;
+  padding-left: 20px;
 }
 
 @keyframes App-logo-spin {
@@ -39,4 +40,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  background-image: url('./assets/curtains.jpg');
 }

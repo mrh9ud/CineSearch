@@ -1,4 +1,4 @@
-import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES } from './actionType'
+import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, NEW_USER_PERSISTED } from './actionType'
 
 const movieRecURL = 'http://localhost:3000/movies'
 const movieSearchURL ='http://localhost:3000/search'
@@ -13,6 +13,15 @@ function fetchedSearchedMovies(searchedMoviesArray) {
 
 function loading() {
     return {type: LOADING}
+}
+
+function validatedUser(userObj) {
+    return { type: NEW_USER_PERSISTED, payload: userObj}
+}
+
+function validatingUser(userObj) {
+    console.log('testing')
+    validatedUser(userObj)
 }
 
 function fetchingRecommendedMovies() {
@@ -47,4 +56,6 @@ function fetchingSearchedMovies(searchTerm) {
     }
 }
 
-export { fetchingRecommendedMovies, fetchingSearchedMovies }
+
+
+export { fetchingRecommendedMovies, fetchingSearchedMovies, validatingUser }

@@ -17,7 +17,7 @@ class MovieShow extends React.Component {
 
             <React.Fragment>
                 <Container>
-                    <Header as="h1" textAlign="center" >{movie[0].original_title}</Header>
+                    <Header as="h1" textAlign="center" color='yellow' >{movie[0].original_title}</Header>
                     <Grid columns={2} divided>
                         <Grid.Row stretched>
                             <Grid.Column>

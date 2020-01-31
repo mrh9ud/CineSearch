@@ -39,9 +39,8 @@ class MovieCard extends React.Component {
                     {this.state.detailsActive 
                     ? 
                     <Link to={`/movies/${id}`} >
-                        <Button 
-                            position="float left"
-                            >More Info
+                        <Button fluid={true}>
+                            More Info
                         </Button>
                     </Link>
                     :

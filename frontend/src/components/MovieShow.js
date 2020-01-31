@@ -14,7 +14,6 @@ class MovieShow extends React.Component {
         let movie = this.findMovieToShow()
 
         return (
-
             <React.Fragment>
                 <Container>
                     <Header as="h1" textAlign="center" color='yellow' >{movie[0].original_title}</Header>
@@ -23,14 +22,14 @@ class MovieShow extends React.Component {
                             <Grid.Column>
 
                                 <Segment>
-                                    <Button floated="left">
-                                        Favorite
-                                    </Button>
+                                    <Header as="h3">Movie Cover</Header>
                                     <Button>
                                         Watched?
                                     </Button>
                                     <Image wrapped size='medium' src={movie[0].poster_path} alt={movie[0].original_title} />
-                                    <Header as="h3">Movie Cover</Header>
+                                    <Button floated="left">
+                                        Favorite
+                                    </Button>
                                     <Button floated="right">
                                         Add to your Watch List
                                     </Button>

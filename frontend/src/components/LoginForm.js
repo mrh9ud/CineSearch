@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header, Form, Image, Button, Container } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { validatingUser } from '../redux/actionCreators'
+import { validatedUser } from '../redux/actionCreators'
 
 class LoginForm extends React.Component {
     state = {
@@ -21,6 +21,15 @@ class LoginForm extends React.Component {
 
     handleFormChange = (event) => {
         this.setState({ [event.target.name]: event.target.value })
+    }
+
+    processNewUser = () => {
+
+        this.props.validatedUser(this.state)
+    }
+
+    processExistingUser = (event) => {
+        console.log(event)
     }
     
     render() {
@@ -92,7 +101,6 @@ class LoginForm extends React.Component {
                         {!this.state.newAccount
                         ?
                         <Button 
-                            type="submit" 
                             floated="right" 
                             primary
                             onClick={this.toggleSignupForm}
@@ -103,7 +111,7 @@ class LoginForm extends React.Component {
                             type="submit" 
                             floated="right" 
                             primary
-                            onClick={undefined}
+                            onClick={this.processNewUser}
                             >Sign Up
                         </Button>
                         }
@@ -112,12 +120,12 @@ class LoginForm extends React.Component {
                         <Button 
                             type="submit" 
                             floated="right"
-                            secondary 
+                            secondary
+                            onClick={this.processExistingUser} 
                             >Sign In
                         </Button>
                         :
                         <Button 
-                            type="submit"
                             floated="right" 
                             secondary 
                             onClick={this.toggleSignupForm}
@@ -130,10 +138,10 @@ class LoginForm extends React.Component {
     }
 }
 
+const mapStateToProps = store => ({ currentUser: store.userObj, usersArray: store.users })
+
 const mapDispatchToProps = dispatch => {
-    return ({
-        validatingUser: (userObj) => dispatch(validatingUser(userObj))
-    })
+    return ({ validatedUser: (userObj) => dispatch(validatedUser(userObj)) })
 }
 
-export default connect(null, mapDispatchToProps)(LoginForm)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)

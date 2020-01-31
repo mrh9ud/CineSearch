@@ -19,4 +19,19 @@ class UsersController < ApplicationController
             ]
         )
     end
+
+    private
+
+    def user_strong_params
+        params.require(:user).permit(
+            :username,
+            :password,
+            :name,
+            :bio,
+            :newAccount,
+            :img,
+            :region,
+            :birthday
+        )
+    end
 end

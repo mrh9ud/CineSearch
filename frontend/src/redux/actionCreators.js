@@ -19,11 +19,6 @@ function validatedUser(userObj) {
     return { type: NEW_USER_PERSISTED, payload: userObj}
 }
 
-function validatingUser(userObj) {
-    console.log('testing')
-    validatedUser(userObj)
-}
-
 function fetchingRecommendedMovies() {
     return (dispatch) => {
         dispatch(loading())
@@ -58,4 +53,4 @@ function fetchingSearchedMovies(searchTerm) {
 
 
 
-export { fetchingRecommendedMovies, fetchingSearchedMovies, validatingUser }
+export { fetchingRecommendedMovies, fetchingSearchedMovies, validatedUser }

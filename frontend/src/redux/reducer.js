@@ -12,7 +12,7 @@ const moviesReducer = (oldState=[], action) => {
     }
 }
 
-const userReducer = (oldState={}, action) => {
+const currentUserReducer = (oldState=null, action) => {
     switch(action.type) {
         case NEW_USER_PERSISTED:
             return action.payload
@@ -23,7 +23,7 @@ const userReducer = (oldState={}, action) => {
 
 const rootReducer = combineReducers({
     moviesArray: moviesReducer,
-    userObj: userReducer
+    userObj: currentUserReducer
 })
 
 export default rootReducer

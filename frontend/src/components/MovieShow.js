@@ -1,22 +1,23 @@
 import React from 'react'
 import { Header, Grid, Segment, Image, Container, Button } from 'semantic-ui-react'
-import { connect } from 'react-redux'
 
 class MovieShow extends React.Component {
 
-    findMovieToShow = () => {
-        return this.props.moviesArray.filter( movie => {
-            return movie.id.toString() === this.props.match.params.id
-        })
-    }
+    // findMovieToShow = () => {
+    //     return this.props.moviesArray.filter( movie => {
+    //         return movie.id.toString() === this.props.match.params.id
+    //     })
+    // }
 
     render() {
-        let movie = this.findMovieToShow()
-
+        
+        console.log(this.props)
+        // let movie = this.findMovieToShow()
+        // debugger
         return (
             <React.Fragment>
                 <Container>
-                    <Header as="h1" textAlign="center" color='yellow' >{movie[0].original_title}</Header>
+                    <Header as="h1" textAlign="center" color='yellow' >{this.props.foundMovie.original_title}</Header>
                     <Grid columns={2} divided>
                         <Grid.Row stretched>
                             <Grid.Column>
@@ -26,7 +27,7 @@ class MovieShow extends React.Component {
                                     <Button>
                                         Watched?
                                     </Button>
-                                    <Image wrapped size='medium' src={movie[0].poster_path} alt={movie[0].original_title} />
+                                    <Image wrapped size='medium' src={this.props.foundMovie.poster_path} alt={this.props.foundMovie.original_title} />
                                     <Button floated="left">
                                         Favorite
                                     </Button>
@@ -41,14 +42,14 @@ class MovieShow extends React.Component {
                                 <Segment textAlign='left'>
                                     <Header as="h3" floated='left'>Movie Information:</Header>
                                     <br /><br />
-                                    <p><b>Description:</b> {movie[0].overview}</p>
-                                    <p><b>Original Release Date:</b> {movie[0].release_date}</p>
-                                    <p><b>Average Viewer Score:</b> {movie[0].vote_average}</p>
+                                    <p><b>Description:</b> {this.props.foundMovie.overview}</p>
+                                    <p><b>Original Release Date:</b> {this.props.foundMovie.release_date}</p>
+                                    <p><b>Average Viewer Score:</b> {this.props.foundMovie.vote_average}</p>
                                 </Segment>
 
                                 <Segment>
                                     <Header as="h3">Movie Images</Header>
-                                    <Image wrapped size="medium" src={movie[0].backdrop_path} alt={movie[0].original_title} />
+                                    <Image wrapped size="medium" src={this.props.foundMovie.backdrop_path} alt={this.props.foundMovie.original_title} />
                                 </Segment>
 
                             </Grid.Column>
@@ -59,7 +60,5 @@ class MovieShow extends React.Component {
         )
     }
 }
-// "release_date", "overview", "vote_average"
-const mapStateToProps = store => ({ moviesArray: store.moviesArray })
 
-export default connect(mapStateToProps)(MovieShow)
+export default MovieShow

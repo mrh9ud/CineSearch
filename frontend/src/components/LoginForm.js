@@ -151,7 +151,7 @@ class LoginForm extends React.Component {
     }
 }
 
-const mapStateToProps = store => ({ currentUser: store.userObj, usersArray: store.users })
+const mapStateToProps = store => ({ currentUser: store.currentUser })
 
 const mapDispatchToProps = dispatch => {
     return ({ createNewUser: (userObj) => dispatch(createNewUser(userObj)),

@@ -8,7 +8,7 @@ class NavBar extends React.Component {
         return (
             <React.Fragment>
             <Menu id="bandmates-nav-bar" inverted>
-                <NavLink to='/movies'>
+                <NavLink to='/'>
                     <Menu.Item name='logo'>CineSearch</Menu.Item>
                 </NavLink>
 

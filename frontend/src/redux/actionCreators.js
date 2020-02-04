@@ -36,8 +36,8 @@ function createNewUser(userObj) {
         fetch(userCreationURL, userConfigObj)
         .then(res => res.json())
         .then(data => {
-            if (!data === null) {
-                dispatch(createNewUser(data))
+            if (data) {
+                dispatch(loginUser(data))
             } else {
                 alert("Username already taken")
             }
@@ -61,7 +61,7 @@ function verifyUser(userObj) {
         fetch(userLoginURL, userConfigObj)
         .then(res => res.json())
         .then(data => {
-            if (!data === null) {
+            if (data) {
                 dispatch(loginUser(data))
             } else {
                 alert("Invalid Login")

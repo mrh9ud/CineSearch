@@ -1,7 +1,7 @@
 import React from 'react'
-import { Header, Form, Image, Button, Container } from 'semantic-ui-react'
+import { Header, Form, Button, Container } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { validatedUser } from '../redux/actionCreators'
+import { createNewUser, verifyUser } from '../redux/actionCreators'
 
 class LoginForm extends React.Component {
     state = {
@@ -23,14 +23,27 @@ class LoginForm extends React.Component {
         this.setState({ [event.target.name]: event.target.value })
     }
 
-    processNewUser = () => {
-
-        this.props.validatedUser(this.state)
+    processNewUserLogin = () => {
+        let newUserFormData = {
+            username: this.state.username,
+            password: this.state.password,
+            name: this.state.name,
+            birthdate: this.state.birthdate,
+            bio: this.state.bio,
+            img: this.state.img,
+            region: this.state.region
+        } 
+        this.props.createNewUser(newUserFormData)
     }
 
-    processExistingUser = (event) => {
-        console.log(event)
+    processExistingUserLogin = (event) => {
+        let existingUserFormData = {
+            username: this.state.username,
+            password: this.state.password
+        }
+        this.props.verifyUser(existingUserFormData)
     }
+
     
     render() {
         return (
@@ -111,7 +124,7 @@ class LoginForm extends React.Component {
                             type="submit" 
                             floated="right" 
                             primary
-                            onClick={this.processNewUser}
+                            onClick={this.processNewUserLogin}
                             >Sign Up
                         </Button>
                         }
@@ -121,7 +134,7 @@ class LoginForm extends React.Component {
                             type="submit" 
                             floated="right"
                             secondary
-                            onClick={this.processExistingUser} 
+                            onClick={this.processExistingUserLogin} 
                             >Sign In
                         </Button>
                         :
@@ -141,7 +154,8 @@ class LoginForm extends React.Component {
 const mapStateToProps = store => ({ currentUser: store.userObj, usersArray: store.users })
 
 const mapDispatchToProps = dispatch => {
-    return ({ validatedUser: (userObj) => dispatch(validatedUser(userObj)) })
+    return ({ createNewUser: (userObj) => dispatch(createNewUser(userObj)),
+              verifyUser: (userObj) => dispatch(verifyUser(userObj)) })
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)

@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :favorites
   resources :genres
   resources :movies, only: [:show, :index]
-  resources :users
+  resources :users, only: [:create, :index]
   post '/search', to: 'movies#search'
+  post '/login', to: 'users#login'
 
 end

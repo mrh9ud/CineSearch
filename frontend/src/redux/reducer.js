@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { FETCHED_RECOMMENDED_MOVIES, FETCHED_SEARCHED_MOVIES, NEW_USER_PERSISTED } from './actionType'
+import { FETCHED_RECOMMENDED_MOVIES, FETCHED_SEARCHED_MOVIES, LOGIN_USER } from './actionType'
 
 const moviesReducer = (oldState=[], action) => {
     switch(action.type) {
@@ -14,7 +14,7 @@ const moviesReducer = (oldState=[], action) => {
 
 const currentUserReducer = (oldState=null, action) => {
     switch(action.type) {
-        case NEW_USER_PERSISTED:
+        case LOGIN_USER:
             return action.payload
         default:
             return oldState
@@ -23,7 +23,7 @@ const currentUserReducer = (oldState=null, action) => {
 
 const rootReducer = combineReducers({
     moviesArray: moviesReducer,
-    userObj: currentUserReducer
+    currentUser: currentUserReducer
 })
 
 export default rootReducer

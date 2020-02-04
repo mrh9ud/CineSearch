@@ -6,6 +6,7 @@ import WatchListContainer from './WatchListContainer'
 import FavoritesContainer from './FavoritesContainer'
 import MovieShow from '../components/MovieShow'
 import LoginForm from '../components/LoginForm'
+import Profile from '../components/Profile'
 
 class MainContainer extends React.Component {
     render() {
@@ -21,6 +22,7 @@ class MainContainer extends React.Component {
                 <Route path='/favorites' exact component={FavoritesContainer}/>
                 <Route path='/movies/:id' exact component={MovieShow}/>
                 <Route path='/login' exact component={LoginForm} />
+                <Route path='.profile' exact component={Profile} />
             </Switch>
         )
     }

@@ -12,7 +12,6 @@ import Home from '../components/Home'
 
 class MainContainer extends React.Component {
     render() {
-        console.log(this.props)
         return (
             <Switch>
                 <Route exact path='/movies/:id' render = { () => {

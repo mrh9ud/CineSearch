@@ -12,6 +12,7 @@ class MovieCard extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         let { id, poster_path, original_title, release_date, overview, vote_average } = this.props.movie
         
         return (

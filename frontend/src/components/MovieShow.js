@@ -1,19 +1,22 @@
 import React from 'react'
 import { Header, Grid, Segment, Image, Container, Button } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { addMovieToWatchList } from '../redux/actionCreators'
 
 class MovieShow extends React.Component {
 
-    // findMovieToShow = () => {
-    //     return this.props.moviesArray.filter( movie => {
-    //         return movie.id.toString() === this.props.match.params.id
-    //     })
-    // }
+    findMovieToAddWatchList = () => {
+        if (this.props.currentUser) {
+            let movieShowId = parseInt(window.location.href.split('/').pop())
+            let movieObj = this.props.moviesArray.find( movie => movie.id === movieShowId)
+            let currentUserId = parseInt(this.props.currentUser.id)
+            this.props.addMovieToWatchList(movieShowId, currentUserId, movieObj)
+        } else {
+            alert('You must be logged in')
+        }
+    }
 
     render() {
-        
-        console.log(this.props)
-        // let movie = this.findMovieToShow()
-        // debugger
         return (
             <React.Fragment>
                 <Container>
@@ -31,8 +34,10 @@ class MovieShow extends React.Component {
                                     <Button floated="left">
                                         Favorite
                                     </Button>
-                                    <Button floated="right">
-                                        Add to your Watch List
+                                    <Button 
+                                        floated="right"
+                                        onClick={this.findMovieToAddWatchList}
+                                        >Add to your Watch List
                                     </Button>
                                 </Segment>
 
@@ -61,4 +66,10 @@ class MovieShow extends React.Component {
     }
 }
 
-export default MovieShow
+const mapStateToProps = store => ({ currentUser: store.currentUser, moviesArray: store.moviesArray })
+
+const mapDispatchToProps = dispatch => {
+    return { addMovieToWatchList: (movieShowId, currentUserId, movieObj) => dispatch(addMovieToWatchList(movieShowId, currentUserId, movieObj)) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MovieShow)

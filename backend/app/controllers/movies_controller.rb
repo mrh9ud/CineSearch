@@ -52,7 +52,8 @@ class MoviesController < ApplicationController
             :vote_average,
             :video,
             :poster_path,
-            :backdrop_path
+            :backdrop_path,
+            :movie_id
         )
     end
 end

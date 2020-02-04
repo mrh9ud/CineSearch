@@ -1,9 +1,10 @@
-import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER } from './actionType'
+import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST } from './actionType'
 
 const movieRecURL = 'http://localhost:3000/movies'
 const movieSearchURL ='http://localhost:3000/search'
 const userCreationURL = 'http://localhost:3000/users'
 const userLoginURL = 'http://localhost:3000/login'
+const watchListAddURL = 'http://localhost:3000/watch_lists'
 
 function fetchedRecommendedMovies(recommendedMoviesArray) {
     return { type: FETCHED_RECOMMENDED_MOVIES, payload: recommendedMoviesArray }
@@ -19,6 +20,35 @@ function loading() {
 
 function loginUser(userObj) {
     return { type: LOGIN_USER, payload: userObj}
+}
+
+function addedMovieToWatchList(movieId) {
+    return { type: ADD_TO_WATCH_LIST, payload: movieId}
+}
+
+//user adding movie to watch list
+function addMovieToWatchList(movieShowId, currentUserId, movieObj) {
+    console.log(movieShowId, currentUserId, movieObj)
+    return dispatch => {
+        
+        let body = {
+            user_id: currentUserId,
+            movie: movieObj
+        }
+        let watchListConfigObj = {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json',
+                "Accept": 'application/json'
+            },
+            body: JSON.stringify(body)
+        }
+
+        dispatch(loading())
+        fetch(watchListAddURL, watchListConfigObj)
+        .then(res => res.json())
+        .then(data => { dispatch(addedMovieToWatchList(data)) })
+    }
 }
 
 //Creates and login New User
@@ -104,4 +134,4 @@ function fetchingSearchedMovies(searchTerm) {
     }
 }
 
-export { fetchingRecommendedMovies, fetchingSearchedMovies, createNewUser, verifyUser }
+export { fetchingRecommendedMovies, fetchingSearchedMovies, createNewUser, verifyUser, addMovieToWatchList }

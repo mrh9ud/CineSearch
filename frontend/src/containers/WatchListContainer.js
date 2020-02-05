@@ -10,7 +10,7 @@ class WatchListContainer extends React.Component {
         return (
             <React.Fragment>
                 <Container>
-                    {this.props.currentUser 
+                    {this.props.currentUser && this.props.currentUser.watch_lists.length !== 0
                     ?
                     <Card.Group className='stackable' itemsPerRow={4}>
                         {this.props.currentUser.watch_lists.map( watch_listObj => {

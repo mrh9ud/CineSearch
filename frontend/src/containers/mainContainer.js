@@ -11,13 +11,26 @@ import { connect } from 'react-redux'
 import Home from '../components/Home'
 
 class MainContainer extends React.Component {
+
+    findPersistedMovie = () => {
+        let movieId = parseInt(window.location.href.split('/').pop())
+        if (this.props.currentUser && this.props.currentUser.watch_lists.length !== 0) {
+            return this.props.currentUser.watch_lists.find( watchListObj => watchListObj.movie.id === movieId)
+        } else {
+            return {}
+        }
+    }
+
     render() {
         return (
             <Switch>
                 <Route exact path='/movies/:id' render = { () => {
                     let movieId = parseInt(window.location.href.split('/').pop())
                     let foundMovie = this.props.moviesArray.find(movie => movie.id === movieId) || {}
-                    return <MovieShow foundMovie={foundMovie}/>
+                    return <MovieShow 
+                                findPersistedMovie={this.findPersistedMovie()} 
+                                foundMovie={foundMovie}
+                            />
                 }} />
                 <Route exact path='/movies' render={ () =>
                     <React.Fragment>
@@ -37,6 +50,6 @@ class MainContainer extends React.Component {
     }
 }
 
-const mapStateToProps = store => ({ moviesArray: store.moviesArray })
+const mapStateToProps = store => ({ moviesArray: store.moviesArray, currentUser: store.currentUser })
 
 export default connect(mapStateToProps)(MainContainer)

@@ -60,7 +60,7 @@ function addMovieToWatchList(currentUserId, movieObj) {
 
         let body = {
             user_id: currentUserId,
-            movie: movieObj
+            movie: movieObj,
         }
         let watchListConfigObj = {
             method: 'POST',
@@ -74,7 +74,7 @@ function addMovieToWatchList(currentUserId, movieObj) {
         dispatch(loading())
         fetch(watchListAddURL, watchListConfigObj)
         .then(res => res.json())
-        .then(data => { dispatch(addedMovieToWatchList(data)) })
+        .then(data => { dispatch(addedMovieToWatchList(data)); console.log(data) })
     }
 }
 

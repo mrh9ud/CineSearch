@@ -3,7 +3,7 @@ class WatchListsController < ApplicationController
         movie = Movie.find_or_create_by(watch_list_strong_params) 
         watch_list = WatchList.create(movie_id: movie.id, user_id: params[:user_id])
         render json: watch_list.to_json(
-            only: [ :id, :watched ],
+            only: [ :watched ],
             include: [
                 user: {
                     only: [ :id, :username, :name]

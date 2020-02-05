@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 class WatchListFavoriteCard extends React.Component {
     state = {
@@ -8,14 +9,23 @@ class WatchListFavoriteCard extends React.Component {
     }
 
     handleDetailsClick = () => {
-        this.setState({ detailsActive: !this.state.detailsActive})
+        this.setState({ detailsActive: !this.state.detailsActive })
     }
 
+    // findMovieDetails = () => {
+    //     returnthis.props.currentUser.watch_lists.find( watchListObj => {
+    //         return watchListObj.movie.id === parseInt(window.location.href.split('/').pop())
+    //     })
+    // }
+
     render() {
+        // console.log(this.props)
         let { id, poster_path, original_title, release_date, overview, vote_average } = this.props.movie
         
         return (
             <React.Fragment>
+                {this.props.currentUser
+                ?
                 <Card>
                     <Image src={poster_path} wrapped ui={false} />
                     {this.state.detailsActive 
@@ -51,10 +61,13 @@ class WatchListFavoriteCard extends React.Component {
                     </Button>
                     }
                 </Card>
-                
+                :
+                <h3>You must be logged in to see your favorites!</h3>}
             </React.Fragment>
         )
     }
 }
 
-export default WatchListFavoriteCard
+const mapStateToProps = store => ({ currentUser: store.currentUser })
+
+export default connect(mapStateToProps)(WatchListFavoriteCard)

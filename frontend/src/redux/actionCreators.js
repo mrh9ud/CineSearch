@@ -1,10 +1,11 @@
-import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST } from './actionType'
+import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES } from './actionType'
 
 const movieRecURL = 'http://localhost:3000/movies'
 const movieSearchURL ='http://localhost:3000/search'
 const userCreationURL = 'http://localhost:3000/users'
 const userLoginURL = 'http://localhost:3000/login'
 const watchListAddURL = 'http://localhost:3000/watch_lists'
+const favoritesAddURL = 'http://localhost:3000/favorites'
 
 function fetchedRecommendedMovies(recommendedMoviesArray) {
     return { type: FETCHED_RECOMMENDED_MOVIES, payload: recommendedMoviesArray }
@@ -26,11 +27,37 @@ function addedMovieToWatchList(movieId) {
     return { type: ADD_TO_WATCH_LIST, payload: movieId}
 }
 
-//user adding movie to watch list
-function addMovieToWatchList(movieShowId, currentUserId, movieObj) {
-    console.log(movieShowId, currentUserId, movieObj)
+function addedMovieToFavorites(movieId) {
+    return { type: ADD_MOVIE_TO_FAVORITES, payload: movieId}
+}
+
+//user adding movie to favorites list
+function addMovieToFavorites(currentUserId, movieObj) {
     return dispatch => {
+        let body = {
+            user_id: currentUserId,
+            movie: movieObj
+        }
+        let favoritesConfigObj = {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json',
+                "Accept": 'application/json' 
+            },
+            body: JSON.stringify(body)
+        }
         
+        dispatch(loading())
+        fetch(favoritesAddURL, favoritesConfigObj)
+        .then(res => res.json())
+        .then(data => { dispatch(addedMovieToFavorites(data)); console.log('action creator', data) })
+    }
+}
+
+//user adding movie to watch list
+function addMovieToWatchList(currentUserId, movieObj) {
+    return dispatch => {
+
         let body = {
             user_id: currentUserId,
             movie: movieObj
@@ -134,4 +161,4 @@ function fetchingSearchedMovies(searchTerm) {
     }
 }
 
-export { fetchingRecommendedMovies, fetchingSearchedMovies, createNewUser, verifyUser, addMovieToWatchList }
+export { fetchingRecommendedMovies, fetchingSearchedMovies, createNewUser, verifyUser, addMovieToWatchList, addMovieToFavorites }

@@ -1,22 +1,40 @@
 import React from 'react'
 import { Header, Grid, Segment, Image, Container, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { addMovieToWatchList } from '../redux/actionCreators'
+import { addMovieToWatchList, addMovieToFavorites } from '../redux/actionCreators'
 
 class MovieShow extends React.Component {
+    //logic for showing different text for favorite and watch list buttons not functional based on status
+
+    findThisMovie = () => {
+        return this.props.moviesArray.find( movie => movie.id === parseInt(window.location.href.split('/').pop()))
+    }
 
     findMovieToAddWatchList = () => {
         if (this.props.currentUser) {
             let movieShowId = parseInt(window.location.href.split('/').pop())
             let movieObj = this.props.moviesArray.find( movie => movie.id === movieShowId)
             let currentUserId = parseInt(this.props.currentUser.id)
-            this.props.addMovieToWatchList(movieShowId, currentUserId, movieObj)
+            this.props.addMovieToWatchList(currentUserId, movieObj)
+        } else {
+            alert('You must be logged in')
+        }
+    }
+
+    findMovieToFavorite = () => {
+        if (this.props.currentUser) {
+            let movieShowId = parseInt(window.location.href.split('/').pop())
+            let movieObj = this.props.moviesArray.find( movie => movie.id === movieShowId)
+            let currentUserId = parseInt(this.props.currentUser.id)
+            this.props.addMovieToFavorites(currentUserId, movieObj)
         } else {
             alert('You must be logged in')
         }
     }
 
     render() {
+        console.log('favorites', this.props.currentUser.favorites, 'watch list', this.props.currentUser.watch_lists)
+
         return (
             <React.Fragment>
                 <Container>
@@ -31,14 +49,32 @@ class MovieShow extends React.Component {
                                         Watched?
                                     </Button>
                                     <Image wrapped size='medium' src={this.props.foundMovie.poster_path} alt={this.props.foundMovie.original_title} />
-                                    <Button floated="left">
-                                        Favorite
+                                    {!this.props.currentUser.favorites.includes(this.findThisMovie())
+                                    ?
+                                    <Button 
+                                        floated="left"
+                                        onClick={this.findMovieToFavorite}
+                                        >Favorite
                                     </Button>
+                                    :
+                                    <Button
+                                        floated="left"
+                                        >On Your favorites
+                                    </Button>
+                                    }
+                                    {!this.props.currentUser.watch_lists.includes(this.findThisMovie())
+                                    ?
                                     <Button 
                                         floated="right"
                                         onClick={this.findMovieToAddWatchList}
                                         >Add to your Watch List
                                     </Button>
+                                    :
+                                    <Button
+                                        floated="right"
+                                        >On Your Watch List!
+                                    </Button>
+                                    }
                                 </Segment>
 
                             </Grid.Column>
@@ -69,7 +105,8 @@ class MovieShow extends React.Component {
 const mapStateToProps = store => ({ currentUser: store.currentUser, moviesArray: store.moviesArray })
 
 const mapDispatchToProps = dispatch => {
-    return { addMovieToWatchList: (movieShowId, currentUserId, movieObj) => dispatch(addMovieToWatchList(movieShowId, currentUserId, movieObj)) }
+    return { addMovieToWatchList: (currentUserId, movieObj) => dispatch(addMovieToWatchList(currentUserId, movieObj)),
+             addMovieToFavorites: (currentUserId, movieObj) => dispatch(addMovieToFavorites(currentUserId, movieObj)) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieShow)

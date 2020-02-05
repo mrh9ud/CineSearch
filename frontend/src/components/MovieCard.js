@@ -7,12 +7,9 @@ class MovieCard extends React.Component {
         detailsActive: false
     }
 
-    handleDetailsClick = () => {
-        this.setState({ detailsActive: !this.state.detailsActive})
-    }
+    handleDetailsClick = () => { this.setState({ detailsActive: !this.state.detailsActive}) }
 
     render() {
-        console.log(this.props)
         let { id, poster_path, original_title, release_date, overview, vote_average } = this.props.movie
         
         return (

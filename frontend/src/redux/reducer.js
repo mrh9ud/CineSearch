@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { FETCHED_RECOMMENDED_MOVIES, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST } from './actionType'
+import { FETCHED_RECOMMENDED_MOVIES, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES } from './actionType'
 
 const moviesReducer = (oldState=[], action) => {
     switch(action.type) {
@@ -23,6 +23,15 @@ const currentUserReducer = (oldState=null, action) => {
                 ]
             }
             return newWatchListItem
+        case ADD_MOVIE_TO_FAVORITES:
+            console.log(oldState, action.payload)
+            const newFavorite = {
+                ...oldState, favorites: [
+                    ...oldState.favorites, action.payload.movie
+                ]
+            }
+            console.log('new favorite return: ', newFavorite)
+            return newFavorite
         default:
             return oldState
     }

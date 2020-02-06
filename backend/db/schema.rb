@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_01_28_205642) do
     t.string "video"
     t.string "poster_path"
     t.string "backdrop_path"
+    t.integer "api_id", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

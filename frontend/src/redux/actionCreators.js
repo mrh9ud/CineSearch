@@ -1,4 +1,4 @@
-import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES } from './actionType'
+import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, MOVIE_WATCHED, LOGOUT_USER } from './actionType'
 
 const movieRecURL = 'http://localhost:3000/movies'
 const movieSearchURL ='http://localhost:3000/search'
@@ -6,6 +6,7 @@ const userCreationURL = 'http://localhost:3000/users'
 const userLoginURL = 'http://localhost:3000/login'
 const watchListAddURL = 'http://localhost:3000/watch_lists'
 const favoritesAddURL = 'http://localhost:3000/favorites'
+const watchMovieURL = 'http://localhost:3000/watch_movie'
 
 function fetchedRecommendedMovies(recommendedMoviesArray) {
     return { type: FETCHED_RECOMMENDED_MOVIES, payload: recommendedMoviesArray }
@@ -31,6 +32,35 @@ function addedMovieToFavorites(movieId) {
     return { type: ADD_MOVIE_TO_FAVORITES, payload: movieId}
 }
 
+function movieWatched(movieId) {
+    return { type: MOVIE_WATCHED, payload: movieId}
+}
+
+function logOutUser() {
+    return { type: LOGOUT_USER }
+}
+
+function watchMovie(currentUserId, movieObj) {
+    return dispatch => {
+        let body = {
+            user_id: currentUserId,
+            movie: movieObj
+        }
+        let movieWatchConfigObj = {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json',
+                "Accept": 'application/json'  
+            },
+            body: JSON.stringify(body)
+        }
+        dispatch(loading())
+        fetch(watchMovieURL, movieWatchConfigObj)
+        .then(res => res.json())
+        .then( data => { dispatch(movieWatched(data)) })
+    }
+}
+
 //user adding movie to favorites list
 function addMovieToFavorites(currentUserId, movieObj) {
     return dispatch => {
@@ -50,14 +80,13 @@ function addMovieToFavorites(currentUserId, movieObj) {
         dispatch(loading())
         fetch(favoritesAddURL, favoritesConfigObj)
         .then(res => res.json())
-        .then(data => { dispatch(addedMovieToFavorites(data)); console.log('action creator', data) })
+        .then(data => { dispatch(addedMovieToFavorites(data)) })
     }
 }
 
 //user adding movie to watch list
 function addMovieToWatchList(currentUserId, movieObj) {
     return dispatch => {
-
         let body = {
             user_id: currentUserId,
             movie: movieObj,
@@ -70,11 +99,10 @@ function addMovieToWatchList(currentUserId, movieObj) {
             },
             body: JSON.stringify(body)
         }
-
         dispatch(loading())
         fetch(watchListAddURL, watchListConfigObj)
         .then(res => res.json())
-        .then(data => { dispatch(addedMovieToWatchList(data)); console.log(data) })
+        .then(data => { console.log(data); dispatch(addedMovieToWatchList(data)) })
     }
 }
 
@@ -113,7 +141,6 @@ function verifyUser(userObj) {
             },
             body: JSON.stringify(userObj)
         }
-
         dispatch(loading())
         fetch(userLoginURL, userConfigObj)
         .then(res => res.json())
@@ -121,7 +148,7 @@ function verifyUser(userObj) {
             if (data) {
                 dispatch(loginUser(data))
             } else {
-                alert("Invalid Login")
+                alert('login error')
             }
         })
     }
@@ -161,4 +188,4 @@ function fetchingSearchedMovies(searchTerm) {
     }
 }
 
-export { fetchingRecommendedMovies, fetchingSearchedMovies, createNewUser, verifyUser, addMovieToWatchList, addMovieToFavorites }
+export { fetchingRecommendedMovies, fetchingSearchedMovies, createNewUser, verifyUser, addMovieToWatchList, addMovieToFavorites, watchMovie, logOutUser }

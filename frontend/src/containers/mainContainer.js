@@ -12,25 +12,36 @@ import Home from '../components/Home'
 
 class MainContainer extends React.Component {
 
-    findPersistedMovie = () => {
-        let movieId = parseInt(window.location.href.split('/').pop())
-        if (this.props.currentUser && this.props.currentUser.watch_lists.length !== 0) {
-            return this.props.currentUser.watch_lists.find( watchListObj => watchListObj.movie.id === movieId)
+    findMovieToShow = () => {
+        let URLId = parseInt(window.location.href.split('/').pop())
+        let foundApiMovie = this.props.moviesArray.find( movie => movie.id === URLId)
+        
+        if (this.props.currentUser) {
+            let watchListMovie = this.props.currentUser.watch_lists.find( watchListObj => watchListObj.movie.api_id === URLId )
+            // debugger
+            let favoriteListMovie = this.props.currentUser.favorites.find( favoriteObj => favoriteObj.movie.api_id === URLId )
+            if (favoriteListMovie !== undefined) {
+                return favoriteListMovie.movie
+            } 
+            if (watchListMovie !== undefined) {
+                return watchListMovie.movie
+            }
+            if (foundApiMovie !== undefined) {
+                return foundApiMovie
+            }
+        // else conditional for the case no user is logged in to show detail page for movie
         } else {
-            return {}
+            return foundApiMovie
         }
     }
 
     render() {
-        return (
+        return this.props.moviesArray.length > 0
+            ?
+            (
             <Switch>
                 <Route exact path='/movies/:id' render = { () => {
-                    let movieId = parseInt(window.location.href.split('/').pop())
-                    let foundMovie = this.props.moviesArray.find(movie => movie.id === movieId) || {}
-                    return <MovieShow 
-                                findPersistedMovie={this.findPersistedMovie()} 
-                                foundMovie={foundMovie}
-                            />
+                    return <MovieShow foundMovie={this.findMovieToShow()} />
                 }} />
                 <Route exact path='/movies' render={ () =>
                     <React.Fragment>
@@ -46,7 +57,9 @@ class MainContainer extends React.Component {
                 <Route exact path='/profile' component={Profile} />
                 <Route exact path ='/' component={Home} />
             </Switch>
-        )
+            )
+            :
+            <h1>Loading</h1>
     }
 }
 

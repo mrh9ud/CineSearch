@@ -19,8 +19,7 @@ class WatchListFavoriteCard extends React.Component {
     // }
 
     render() {
-        // console.log(this.props)
-        let { id, poster_path, original_title, release_date, overview, vote_average } = this.props.movie
+        let { api_id, poster_path, original_title, release_date, overview, vote_average } = this.props.movie
         
         return (
             <React.Fragment>
@@ -48,7 +47,7 @@ class WatchListFavoriteCard extends React.Component {
                     null}
                     {this.state.detailsActive 
                     ? 
-                    <Link to={`/movies/${id}`} >
+                    <Link to={`/movies/${api_id}`} >
                         <Button fluid={true}>
                             More Info
                         </Button>

@@ -1,20 +1,16 @@
 import React from 'react'
 import { Header, Grid, Segment, Image, Container, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { addMovieToWatchList, addMovieToFavorites } from '../redux/actionCreators'
+import { addMovieToWatchList, addMovieToFavorites, watchMovie } from '../redux/actionCreators'
 
 class MovieShow extends React.Component {
     //logic for showing different text for favorite and watch list buttons not functional based on status
 
-    findThisMovie = () => {
-        return this.props.moviesArray.find( movie => movie.id === parseInt(window.location.href.split('/').pop()))
-    }
-
     findMovieToAddWatchList = () => {
         if (this.props.currentUser) {
-            let movieShowId = parseInt(window.location.href.split('/').pop())
-            let movieObj = this.props.moviesArray.filter( movie => {
-                return movie.id === movieShowId})
+            let URLId = parseInt(window.location.href.split('/').pop())
+            let movieObj = this.props.moviesArray.find( movie => {
+                return movie.id === URLId})
             let currentUserId = parseInt(this.props.currentUser.id)
             this.props.addMovieToWatchList(currentUserId, movieObj)
         } else {
@@ -24,8 +20,8 @@ class MovieShow extends React.Component {
 
     findMovieToFavorite = () => {
         if (this.props.currentUser) {
-            let movieShowId = parseInt(window.location.href.split('/').pop())
-            let movieObj = this.props.moviesArray.find( movie => movie.id === movieShowId)
+            let URLId = parseInt(window.location.href.split('/').pop())
+            let movieObj = this.props.moviesArray.find( movie => movie.id === URLId)
             let currentUserId = parseInt(this.props.currentUser.id)
             this.props.addMovieToFavorites(currentUserId, movieObj)
         } else {
@@ -33,23 +29,36 @@ class MovieShow extends React.Component {
         }
     }
 
-    handleMovieViewing = () => {
-        let movieObj = this.findThisMovie()
-        return this.props.currentUser.watch_lists.find( watchListObj => {
-            return watchListObj.id === parseInt(window.location.href.split('/').pop())
-        })
+    watchMovie = () => {
+        let URLId = parseInt(window.location.href.split('/').pop())
+        let foundApiMovie = this.props.moviesArray.find( movie => movie.id === URLId)
+
+        if (this.props.currentUser) {
+            let currentUserId = this.props.currentUser.id
+            let currentUserWatchListMovie = this.props.currentUser.watch_lists.find( watchListObj => watchListObj.movie.api_id === URLId)
+            let currentUserFavoritedMovie = this.props.currentUser.favorites.find( watchListObj => watchListObj.movie.api_id === URLId)
+
+            if (currentUserWatchListMovie !== undefined) {
+                this.props.watchMovie(currentUserId, currentUserWatchListMovie)
+            } else if (currentUserFavoritedMovie !== undefined) {
+                this.props.watchMovie(currentUserId, currentUserFavoritedMovie)
+            } else {
+                this.props.watchMovie(currentUserId, foundApiMovie)
+            }
+        } else {
+            alert("You must be logged in")
+        }
+    }
+    //returns a boolean to determine which favoriting button to show
+    hasUserFavoritedMovie = () => {
+
     }
 
     render() {
-        //logic exists in the continegency on refresh of page that these deconstructed keys don't exist
-        console.log(this.props)   
-        // debugger 
-        if (Object.keys(this.props.foundMovie).length === 0 || Object.keys(this.props.findPersistedMovie).length === 0) {
-            if (Object.keys(this.props.findPersistedMovie).length === 0) {
-                var { original_title, poster_path, overview, release_date, vote_average, backdrop_path } = this.props.foundMovie
-            } else {
-                var { original_title, poster_path, overview, release_date, vote_average, backdrop_path} = this.props.findPersistedMovie.movie
-            }
+        if (this.props.foundMovie === undefined) {
+            return <h1>Loading</h1>
+        } else {
+            let { original_title, release_date, overview, vote_average, poster_path, backdrop_path } = this.props.foundMovie
             return (
                 <React.Fragment>
                     <Container>
@@ -61,8 +70,8 @@ class MovieShow extends React.Component {
                                     <Segment>
                                         <Header as="h3">Movie Cover</Header>
                                         <Button
-                                            onClick={this.handleMovieViewing}
-                                            >Watched?
+                                            onClick={this.watchMovie}
+                                            >Already Watched?
                                         </Button>
                                         <Image wrapped size='medium' src={poster_path} alt={original_title} />
                                         {/* {!this.props.currentUser.favorites.includes(this.findThisMovie()) */}
@@ -114,15 +123,18 @@ class MovieShow extends React.Component {
                     </Container>
                 </React.Fragment>
             )
-        } 
+        }
     }
 }
 
-const mapStateToProps = store => ({ currentUser: store.currentUser, moviesArray: store.moviesArray })
+const mapStateToProps = store => {
+    return ({ currentUser: store.currentUser, moviesArray: store.moviesArray })
+}
 
 const mapDispatchToProps = dispatch => {
     return { addMovieToWatchList: (currentUserId, movieObj) => dispatch(addMovieToWatchList(currentUserId, movieObj)),
-             addMovieToFavorites: (currentUserId, movieObj) => dispatch(addMovieToFavorites(currentUserId, movieObj)) }
+             addMovieToFavorites: (currentUserId, movieObj) => dispatch(addMovieToFavorites(currentUserId, movieObj)),
+                      watchMovie: (currentUserId, movieObj) => dispatch(watchMovie(currentUserId, movieObj)) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieShow)

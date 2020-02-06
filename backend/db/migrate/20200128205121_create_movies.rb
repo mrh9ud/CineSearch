@@ -8,6 +8,7 @@ class CreateMovies < ActiveRecord::Migration[6.0]
       t.string :video
       t.string :poster_path
       t.string :backdrop_path
+      t.integer :api_id, default: 0
 
       t.timestamps
     end

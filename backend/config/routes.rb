@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :index]
   post '/search', to: 'movies#search'
   post '/login', to: 'users#login'
+  post '/watch_movie', to: 'watch_lists#watch_movie'
 
 end

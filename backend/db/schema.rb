@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_205642) do
+ActiveRecord::Schema.define(version: 2020_02_07_162917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 2020_01_28_205642) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["genre_id"], name: "index_movie_genres_on_genre_id"
     t.index ["movie_id"], name: "index_movie_genres_on_movie_id"
+  end
+
+  create_table "movie_watches", force: :cascade do |t|
+    t.bigint "movie_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_movie_watches_on_movie_id"
+    t.index ["user_id"], name: "index_movie_watches_on_user_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -67,7 +76,6 @@ ActiveRecord::Schema.define(version: 2020_01_28_205642) do
   create_table "watch_lists", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
-    t.boolean "watched", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["movie_id"], name: "index_watch_lists_on_movie_id"
@@ -78,6 +86,8 @@ ActiveRecord::Schema.define(version: 2020_01_28_205642) do
   add_foreign_key "favorites", "users"
   add_foreign_key "movie_genres", "genres"
   add_foreign_key "movie_genres", "movies"
+  add_foreign_key "movie_watches", "movies"
+  add_foreign_key "movie_watches", "users"
   add_foreign_key "watch_lists", "movies"
   add_foreign_key "watch_lists", "users"
 end

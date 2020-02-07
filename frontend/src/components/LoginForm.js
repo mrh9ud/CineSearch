@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <Container>
-                <Header>Profile Details</Header>
+                <Header textAlign='center' inverted size="large">CineSearch</Header>
                 <Form>
                     <Form.Group widths='equal'>
                     <Form.Input 
@@ -71,7 +71,8 @@ class LoginForm extends React.Component {
                     ?
                     <React.Fragment>
                         <Form.Group widths='equal'>
-                            <Form.Input 
+                            <Form.Input
+                                required
                                 fluid 
                                 name="name" 
                                 label="Full Name"
@@ -79,6 +80,7 @@ class LoginForm extends React.Component {
                                 onChange={this.handleFormChange}
                             />
                             <Form.Input 
+                                required
                                 fluid 
                                 name="region" 
                                 label="Region"
@@ -87,7 +89,8 @@ class LoginForm extends React.Component {
                             />
                         </Form.Group>
                         <Form.Group widths='equal'>
-                            <Form.Input 
+                            <Form.Input
+                                required 
                                 fluid 
                                 name="birthdate" 
                                 label="Birthdate"
@@ -95,6 +98,7 @@ class LoginForm extends React.Component {
                                 onChange={this.handleFormChange}
                             />
                             <Form.Input 
+                                required
                                 fluid 
                                 name="img" 
                                 label="Profile Image"
@@ -103,6 +107,7 @@ class LoginForm extends React.Component {
                             />
                         </Form.Group>
                             <Form.TextArea
+                                required
                                 name="bio"
                                 label='Bio'
                                 placeholder='Just a little bit about you here'

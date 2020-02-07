@@ -6,6 +6,10 @@ import { addMovieToWatchList, addMovieToFavorites, watchMovie } from '../redux/a
 class MovieShow extends React.Component {
     //logic for showing different text for favorite and watch list buttons not functional based on status
 
+    componentDidMount = () => {
+
+    }
+
     findMovieToAddWatchList = () => {
         if (this.props.currentUser) {
             let URLId = parseInt(window.location.href.split('/').pop())
@@ -28,23 +32,13 @@ class MovieShow extends React.Component {
             alert('You must be logged in')
         }
     }
-
+    
+    //marks a movie as watched ... toggles boolean
     watchMovie = () => {
-        let URLId = parseInt(window.location.href.split('/').pop())
-        let foundApiMovie = this.props.moviesArray.find( movie => movie.id === URLId)
-
         if (this.props.currentUser) {
             let currentUserId = this.props.currentUser.id
-            let currentUserWatchListMovie = this.props.currentUser.watch_lists.find( watchListObj => watchListObj.movie.api_id === URLId)
-            let currentUserFavoritedMovie = this.props.currentUser.favorites.find( watchListObj => watchListObj.movie.api_id === URLId)
-
-            if (currentUserWatchListMovie !== undefined) {
-                this.props.watchMovie(currentUserId, currentUserWatchListMovie)
-            } else if (currentUserFavoritedMovie !== undefined) {
-                this.props.watchMovie(currentUserId, currentUserFavoritedMovie)
-            } else {
-                this.props.watchMovie(currentUserId, foundApiMovie)
-            }
+            let currentMovie = this.props.foundMovie
+            this.props.watchMovie(currentUserId, currentMovie)
         } else {
             alert("You must be logged in")
         }

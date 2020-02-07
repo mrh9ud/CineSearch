@@ -1,23 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, Container } from 'semantic-ui-react'
-import WatchListFavoriteCard from '../components/WatchListFavoriteCard'
+import { Card, Container, Header } from 'semantic-ui-react'
+import PersistedMovieCard from '../components/PersistedMovieCard'
 
 class FavoritesContainer extends React.Component {
-    //if else logic takes into account differences in nested keys for movies that were already added and those that were just added 
-    //based on a re-render or not
     render() {
         return (
             <React.Fragment>
                 <Container>
+                    <Header textAlign='center' inverted size="large">Your Favorite Movies</Header>
                     {this.props.currentUser 
                     ?
-                    <Card.Group className='stackable' itemsPerRow={4}>
+                    <Card.Group className='stackable' itemsPerRow={5}>
                         {this.props.currentUser.favorites.map( favoriteObj => {
                             if (favoriteObj.movie) {
-                                return <WatchListFavoriteCard key={favoriteObj.movie.id} movie={favoriteObj.movie} />
+                                return <PersistedMovieCard key={favoriteObj.movie.id} movie={favoriteObj.movie} />
                         } else {
-                                return <WatchListFavoriteCard key={favoriteObj.id} movie={favoriteObj} />
+                                return <PersistedMovieCard key={favoriteObj.id} movie={favoriteObj} />
                         }})}
                     </Card.Group>
                     :

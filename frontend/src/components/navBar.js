@@ -9,7 +9,7 @@ class NavBar extends React.Component {
     render() {
         return (
             <React.Fragment>
-            <Menu id="cinesearch-nav-bar" inverted>
+            <Menu id="cinesearch-nav-bar" position="left" inverted>
                 <NavLink to='/'>
                     <Menu.Item name='logo'>CineSearch</Menu.Item>
                 </NavLink>
@@ -17,16 +17,24 @@ class NavBar extends React.Component {
                 <NavLink to='/movies'>
                     <Menu.Item name='movies'>Browse Movies</Menu.Item>
                 </NavLink>
-
-                <NavLink to='/favorites'>
-                    <Menu.Item name='favorites'>Favorites</Menu.Item>
-                </NavLink>
-                
-                <NavLink to='/watchlist'>
-                    <Menu.Item name='watch_lists'>Watch List</Menu.Item>
-                </NavLink>
-                
-                <Menu.Menu position="right" >
+                {this.props.currentUser
+                ?
+                <React.Fragment>
+                    <NavLink to='/favorites'>   
+                        <Menu.Item  position='left' name='favorites'>Favorites</Menu.Item>
+                    </NavLink>
+                    
+                    <NavLink to='/watchlist'>
+                        <Menu.Item position="left" name='watch_lists'>Watch List</Menu.Item>
+                    </NavLink>
+                    <NavLink to='/watched'>
+                        <Menu.Item position="left" name='watched'>Recently Watched</Menu.Item>
+                    </NavLink>
+                </React.Fragment>
+                :
+                null
+                }
+                <Menu.Menu position="right" fluid >
                     <Menu.Item>
                         
                         {!this.props.currentUser
@@ -42,6 +50,7 @@ class NavBar extends React.Component {
                                 <Menu.Item name='profile'><Image fluid src={this.props.currentUser.img} alt={'profile picture'}/></Menu.Item>
                             </NavLink>
                             <Button
+                                size='mini'
                                 floated="right"
                                 onClick={this.props.logOutUser}
                                 >Logout

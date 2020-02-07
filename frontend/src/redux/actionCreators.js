@@ -1,4 +1,4 @@
-import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, MOVIE_WATCHED, LOGOUT_USER } from './actionType'
+import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, ADD_MOVIE_TO_WATCHED, LOGOUT_USER } from './actionType'
 
 const movieRecURL = 'http://localhost:3000/movies'
 const movieSearchURL ='http://localhost:3000/search'
@@ -6,7 +6,7 @@ const userCreationURL = 'http://localhost:3000/users'
 const userLoginURL = 'http://localhost:3000/login'
 const watchListAddURL = 'http://localhost:3000/watch_lists'
 const favoritesAddURL = 'http://localhost:3000/favorites'
-const watchMovieURL = 'http://localhost:3000/watch_movie'
+const watchMovieURL = 'http://localhost:3000/movie_watches'
 
 function fetchedRecommendedMovies(recommendedMoviesArray) {
     return { type: FETCHED_RECOMMENDED_MOVIES, payload: recommendedMoviesArray }
@@ -33,13 +33,14 @@ function addedMovieToFavorites(movieId) {
 }
 
 function movieWatched(movieId) {
-    return { type: MOVIE_WATCHED, payload: movieId}
+    return { type: ADD_MOVIE_TO_WATCHED, payload: movieId}
 }
 
 function logOutUser() {
     return { type: LOGOUT_USER }
 }
 
+//user marking movie as already watched
 function watchMovie(currentUserId, movieObj) {
     return dispatch => {
         let body = {

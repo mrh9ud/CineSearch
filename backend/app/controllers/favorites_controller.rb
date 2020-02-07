@@ -11,8 +11,6 @@ class FavoritesController < ApplicationController
             backdrop_path: params[:movie][:backdrop_path],
             api_id: params[:movie][:id]
         ) 
-
-        currentUser = User.find_by(id: params[:user_id])
         favorite = Favorite.create(movie_id: movie.id, user_id: params[:user_id])
         
         render json: favorite.to_json(

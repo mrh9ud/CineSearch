@@ -11,7 +11,13 @@ class UsersController < ApplicationController
                     ]
                 },
                 watch_lists: {
-                    only: [ :id, :watched ],
+                    only: [ :id ],
+                    include: [
+                        movie: { except: [ :created_at, :updated_at ] }
+                    ]
+                },
+                movie_watches: {
+                    only: [ :id ],
                     include: [
                         movie: { except: [ :created_at, :updated_at ] }
                     ]
@@ -45,6 +51,12 @@ class UsersController < ApplicationController
                     include: [
                         movie: { except: [ :created_at, :updated_at ] }
                     ]
+                },
+                movie_watches: {
+                    only: [ :id ],
+                    include: [
+                        movie: { except: [ :created_at, :updated_at ] }
+                    ]
                 }
             ]
         )
@@ -64,6 +76,12 @@ class UsersController < ApplicationController
                 },
                 watch_lists: {
                     only: [ :id, :watched ],
+                    include: [
+                        movie: { except: [ :created_at, :updated_at ] }
+                    ]
+                },
+                movie_watches: {
+                    only: [ :id ],
                     include: [
                         movie: { except: [ :created_at, :updated_at ] }
                     ]

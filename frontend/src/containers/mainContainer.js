@@ -1,9 +1,10 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import MovieContainer from './MovieContainer'
 import SearchBar from '../components/SearchBar'
 import WatchListContainer from './WatchListContainer'
 import FavoritesContainer from './FavoritesContainer'
+import WatchedContainer from './WatchedContainer'
 import MovieShow from '../components/MovieShow'
 import LoginForm from '../components/LoginForm'
 import Profile from '../components/Profile'
@@ -42,18 +43,27 @@ class MainContainer extends React.Component {
                 <Route exact path='/movies/:id' render = { () => {
                     return <MovieShow foundMovie={this.findMovieToShow()} />
                 }} />
+
                 <Route exact path='/movies' render={ () =>
                     <React.Fragment>
                         <SearchBar />
                         <MovieContainer />
                     </React.Fragment>
                 }/>
-                <Route exact path='/watchlist' component={WatchListContainer}/>
-                <Route exact path='/favorites' component={FavoritesContainer}/>
-                
-                
+
+                <Route exact path='/watchlist' render={ () => (this.props.currentUser === null)
+                    ? <Redirect to='/login' /> : <WatchListContainer/>} />
+
+                <Route exact path='/favorites' render={ () => (this.props.currentUser === null)
+                    ? <Redirect to='/login' /> : <FavoritesContainer/>} />
+
+                <Route exact path='/watched' render={ () => (this.props.currentUser === null)
+                    ? <Redirect to='/login' /> : <WatchedContainer/>} />
                 <Route exact path='/login' component={LoginForm} />
-                <Route exact path='/profile' component={Profile} />
+
+                <Route exact path='/profile' render={ () => (this.props.currentUser === null)
+                    ? <Redirect to='/login' /> : <Profile/>} />
+                    
                 <Route exact path ='/' component={Home} />
             </Switch>
             )

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :movie_watches, only: [ :create, :destroy ]
   resources :movie_genres
   resources :watch_lists, only: [:create, :update]
   resources :favorites
@@ -7,6 +8,6 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :index]
   post '/search', to: 'movies#search'
   post '/login', to: 'users#login'
-  post '/watch_movie', to: 'watch_lists#watch_movie'
+
 
 end

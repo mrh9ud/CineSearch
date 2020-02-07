@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { FETCHED_RECOMMENDED_MOVIES, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, LOGOUT_USER } from './actionType'
+import { FETCHED_RECOMMENDED_MOVIES, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, LOGOUT_USER, ADD_MOVIE_TO_WATCHED } from './actionType'
 
 const moviesReducer = (oldState=[], action) => {
     switch(action.type) {
@@ -7,13 +7,13 @@ const moviesReducer = (oldState=[], action) => {
             return action.payload
         case FETCHED_SEARCHED_MOVIES:
             return action.payload
+
         default:
             return oldState
     }
 }
 
 const currentUserReducer = (oldState=null, action) => {
-    // console.log('action.payload', action.payload)
     switch(action.type) {
         case LOGIN_USER:
             return action.payload
@@ -25,7 +25,6 @@ const currentUserReducer = (oldState=null, action) => {
                     ...oldState.watch_lists, action.payload
                 ]
             }
-            // console.log('new watch list', newWatchListItem)
             return newWatchListItem
         case ADD_MOVIE_TO_FAVORITES:
             const newFavorite = {
@@ -33,8 +32,14 @@ const currentUserReducer = (oldState=null, action) => {
                     ...oldState.favorites, action.payload
                 ]
             }
-            console.log('new favorite', newFavorite, 'oldState', oldState)
             return newFavorite
+        case ADD_MOVIE_TO_WATCHED:
+            const newWatchedMovie = {
+                ...oldState, movie_watches: [
+                    ...oldState.movie_watches, action.payload
+                ]
+            }
+            return newWatchedMovie
         default:
             return oldState
     }
@@ -42,7 +47,7 @@ const currentUserReducer = (oldState=null, action) => {
 
 const rootReducer = combineReducers({
     moviesArray: moviesReducer,
-    currentUser: currentUserReducer,
+    currentUser: currentUserReducer
 })
 
 export default rootReducer

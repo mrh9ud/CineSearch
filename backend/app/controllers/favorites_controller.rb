@@ -13,16 +13,15 @@ class FavoritesController < ApplicationController
         ) 
 
         currentUser = User.find_by(id: params[:user_id])
-        if !currentUser.favorites.include?(movie.id)
-            favorite = Favorite.create(movie_id: movie.id, user_id: params[:user_id])
-            render json: favorite.to_json(
-                only: [ :id, :user_id ],
-                    include: [
-                        movie: { except: [ :created_at, :updated_at] }
-                    ]
-            )
-        else
-            render :json => { :errors => currentUser.errors.full_messages }, :status => 422
-        end
+        favorite = Favorite.create(movie_id: movie.id, user_id: params[:user_id])
+        
+        render json: favorite.to_json(
+            only: [ :id, :user_id ],
+            include: [
+                movie: { 
+                    except: [ :created_at, :updated_at] 
+                }
+            ]
+        )
     end
 end

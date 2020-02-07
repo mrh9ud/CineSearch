@@ -13,6 +13,7 @@ const moviesReducer = (oldState=[], action) => {
 }
 
 const currentUserReducer = (oldState=null, action) => {
+    // console.log('action.payload', action.payload)
     switch(action.type) {
         case LOGIN_USER:
             return action.payload
@@ -21,16 +22,18 @@ const currentUserReducer = (oldState=null, action) => {
         case ADD_TO_WATCH_LIST:
             const newWatchListItem = {
                 ...oldState, watch_lists: [
-                    ...oldState.watch_lists, action.payload.movie
+                    ...oldState.watch_lists, action.payload
                 ]
             }
+            // console.log('new watch list', newWatchListItem)
             return newWatchListItem
         case ADD_MOVIE_TO_FAVORITES:
             const newFavorite = {
                 ...oldState, favorites: [
-                    ...oldState.favorites, action.payload.movie
+                    ...oldState.favorites, action.payload
                 ]
             }
+            console.log('new favorite', newFavorite, 'oldState', oldState)
             return newFavorite
         default:
             return oldState

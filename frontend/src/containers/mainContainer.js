@@ -18,7 +18,6 @@ class MainContainer extends React.Component {
         
         if (this.props.currentUser) {
             let watchListMovie = this.props.currentUser.watch_lists.find( watchListObj => watchListObj.movie.api_id === URLId )
-            // debugger
             let favoriteListMovie = this.props.currentUser.favorites.find( favoriteObj => favoriteObj.movie.api_id === URLId )
             if (favoriteListMovie !== undefined) {
                 return favoriteListMovie.movie

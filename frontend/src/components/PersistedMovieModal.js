@@ -1,10 +1,12 @@
 import React from 'react'
 import { Card, Image, Button, Modal } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 class PersistedMovieModal extends React.Component {
+    
     render() {
-        let { id, poster_path, original_title, release_date, overview, vote_average } = this.props.movie
+        let { api_id, poster_path, original_title, release_date, overview, vote_average } = this.props.movie
 
         return (
             <React.Fragment>
@@ -23,14 +25,16 @@ class PersistedMovieModal extends React.Component {
                         Rating: {vote_average}
                     </Card.Content>
                 </React.Fragment>
-                <Link to={`/movies/${id}`} >
+                <Link to={`/movies/${api_id}`} >
                         <Button>
                             More Info
-                        </Button>       
+                        </Button>
                 </Link>
             </React.Fragment>
         )
     }
 }
 
-export default PersistedMovieModal
+const mapStateToProps = store => ({ currentUser: store.currentUser })
+
+export default connect(mapStateToProps)(PersistedMovieModal)

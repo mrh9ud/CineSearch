@@ -22,5 +22,9 @@ class WatchListsController < ApplicationController
         )
     end
 
+    def destroy
+        watch_list = WatchList.find_by(user_id: params[:user_id], movie_id: params[:movie_id])
+        watch_list.destroy
+    end
 end
 

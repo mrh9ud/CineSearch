@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Card, Container, Header } from 'semantic-ui-react'
 import PersistedMovieCard from '../components/PersistedMovieCard'
+import uuid from 'react-uuid'
 
 class WatchListContainer extends React.Component {
     render() {
@@ -14,9 +15,9 @@ class WatchListContainer extends React.Component {
                     <Card.Group className='stackable' itemsPerRow={5}>
                         {this.props.currentUser.watch_lists.map( watch_listObj => {
                             if (watch_listObj.movie) {
-                                return <PersistedMovieCard key={watch_listObj.movie.id} movie={watch_listObj.movie} />
+                                return <PersistedMovieCard key={uuid()} movie={watch_listObj.movie} />
                         } else {
-                                return <PersistedMovieCard key={watch_listObj.id} movie={watch_listObj} />
+                                return <PersistedMovieCard key={uuid()} movie={watch_listObj} />
                         }})}
                     </Card.Group>
                     :

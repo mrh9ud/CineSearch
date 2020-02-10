@@ -1,4 +1,6 @@
-import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, ADD_MOVIE_TO_WATCHED, LOGOUT_USER } from './actionType'
+import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER, 
+        ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, ADD_MOVIE_TO_WATCHED, LOGOUT_USER, 
+        REMOVE_MOVIE_USER_WATCHLIST, REMOVE_MOVIE_USER_FAVORITE } from './actionType'
 
 const movieRecURL = 'http://localhost:3000/movies'
 const movieSearchURL ='http://localhost:3000/search'
@@ -7,6 +9,9 @@ const userLoginURL = 'http://localhost:3000/login'
 const watchListAddURL = 'http://localhost:3000/watch_lists'
 const favoritesAddURL = 'http://localhost:3000/favorites'
 const watchMovieURL = 'http://localhost:3000/movie_watches'
+const deleteMovieUserWatchedURL = 'http://localhost:3000/movie_watches'
+const deleteMovieUserFavoritesURL = 'http://localhost:3000/favorites'
+const deleteMovieUserWatchListURL = 'http://localhost:3000/watch_lists'
 
 function fetchedRecommendedMovies(recommendedMoviesArray) {
     return { type: FETCHED_RECOMMENDED_MOVIES, payload: recommendedMoviesArray }
@@ -16,13 +21,11 @@ function fetchedSearchedMovies(searchedMoviesArray) {
     return { type: FETCHED_SEARCHED_MOVIES, payload: searchedMoviesArray }
 }
 
-function loading() {
-    return {type: LOADING}
-}
+function loading() { return {type: LOADING} }
 
-function loginUser(userObj) {
-    return { type: LOGIN_USER, payload: userObj}
-}
+function loginUser(userObj) { return { type: LOGIN_USER, payload: userObj} }
+
+function logOutUser() { return { type: LOGOUT_USER } }
 
 function addedMovieToWatchList(movieId) {
     return { type: ADD_TO_WATCH_LIST, payload: movieId}
@@ -36,8 +39,78 @@ function movieWatched(movieId) {
     return { type: ADD_MOVIE_TO_WATCHED, payload: movieId}
 }
 
-function logOutUser() {
-    return { type: LOGOUT_USER }
+function movieUserWatchListRemoved(movieId) {
+    return { type: REMOVE_MOVIE_USER_WATCHLIST, payload: movieId }
+}
+
+function movieUserFavoriteRemoved(movieId) {
+    return { type: REMOVE_MOVIE_USER_FAVORITE, payload: movieId}
+}
+
+//remove from list of watched movies
+function removeMovieUserWatched(movieId, currentUserId) {
+    return dispatch => {
+        let body = {
+            movie_id: movieId,
+            user_id: currentUserId
+        }
+        let movieUserWatchedConfigObj = {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }, 
+            body: JSON.stringify(body)
+        }
+        dispatch(loading())
+        fetch(deleteMovieUserWatchedURL + `/${currentUserId}`, movieUserWatchedConfigObj)
+        .then( res => res.json())
+        .then( data => { console.log(data) })
+    }
+}
+
+//delete a movie from a favorites list
+function removeMovieUserFavorite(movieId, currentUserId) {
+    return dispatch => {
+        let body = {
+            movie_id: movieId,
+            user_id: currentUserId
+        }
+        let movieUserFavoriteConfigObj = {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }, 
+            body: JSON.stringify(body)
+        }
+        dispatch(loading())
+        fetch(deleteMovieUserFavoritesURL + `/${currentUserId}`, movieUserFavoriteConfigObj)
+        .then( res => res.json())
+        .then( data => { console.log(data) })
+    }
+}
+
+//delete movie from a to-watch list
+function removeMovieUserWatchList(movieId, currentUserId) {
+    return dispatch => {
+        let body = {
+            movie_id: movieId,
+            user_id: currentUserId
+        }
+        let movieUserWatchListConfigObj = {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }, 
+            body: JSON.stringify(body)
+        }
+        dispatch(loading())
+        fetch(deleteMovieUserWatchListURL + `/${currentUserId}`, movieUserWatchListConfigObj)
+        .then( res => res.json())
+        .then( data => console.log(data))
+    }
 }
 
 //user marking movie as already watched
@@ -189,4 +262,6 @@ function fetchingSearchedMovies(searchTerm) {
     }
 }
 
-export { fetchingRecommendedMovies, fetchingSearchedMovies, createNewUser, verifyUser, addMovieToWatchList, addMovieToFavorites, watchMovie, logOutUser }
+export { fetchingRecommendedMovies, fetchingSearchedMovies, createNewUser, verifyUser, 
+        addMovieToWatchList, addMovieToFavorites, watchMovie, logOutUser, removeMovieUserWatchList, 
+        removeMovieUserFavorite, removeMovieUserWatched }

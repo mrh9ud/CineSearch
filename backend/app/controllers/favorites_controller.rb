@@ -22,4 +22,9 @@ class FavoritesController < ApplicationController
             ]
         )
     end
+
+    def destroy
+        favorite = Favorite.find_by(user_id: params[:user_id], movie_id: params[:movie_id])
+        favorite.destroy
+    end
 end

@@ -22,4 +22,10 @@ class MovieWatchesController < ApplicationController
             ]
         )
     end
+
+    def destroy
+         movie_watch = MovieWatch.find_by(user_id: params[:user_id], movie_id: params[:movie_id])
+         byebug
+         movie_watch.destroy
+    end
 end

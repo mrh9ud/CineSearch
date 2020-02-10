@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
-import { FETCHED_RECOMMENDED_MOVIES, FETCHED_SEARCHED_MOVIES, LOGIN_USER, ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, LOGOUT_USER, ADD_MOVIE_TO_WATCHED } from './actionType'
+import { FETCHED_RECOMMENDED_MOVIES, FETCHED_SEARCHED_MOVIES, LOGIN_USER, 
+        ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, LOGOUT_USER, ADD_MOVIE_TO_WATCHED } from './actionType'
 
 const moviesReducer = (oldState=[], action) => {
     switch(action.type) {

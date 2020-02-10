@@ -32,9 +32,7 @@ class MovieWatchesController < ApplicationController
 
     def destroy
         movie_watch = MovieWatch.find(params[:id])
-        deleted_movie_watch_id = movie_watch.id
-
         movie_watch.destroy
-        render json: { id: deleted_movie_watch_id }
+        render json: { id: params[:id]}
     end
 end

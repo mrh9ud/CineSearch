@@ -34,9 +34,8 @@ class WatchListsController < ApplicationController
 
     def destroy
         watch_list = WatchList.find(params[:id])
-        deleted_movie_watch_list_id = watch_list.id
         watch_list.destroy
-        render json: { id: deleted_movie_watch_list_id }
+        render json: { id: params[:id] }
     end
 end
 

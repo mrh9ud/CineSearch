@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   post '/search', to: 'movies#search'
   post '/login', to: 'users#login'
 
-
 end

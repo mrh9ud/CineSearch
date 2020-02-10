@@ -1,6 +1,6 @@
 import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER, 
         ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, ADD_MOVIE_TO_WATCHED, LOGOUT_USER, 
-        REMOVE_MOVIE_USER_WATCHLIST, REMOVE_MOVIE_USER_FAVORITE } from './actionType'
+        REMOVE_MOVIE_USER_WATCHLIST, REMOVE_MOVIE_USER_FAVORITE, REMOVE_MOVIE_USER_WATCHED } from './actionType'
 
 const movieRecURL = 'http://localhost:3000/movies'
 const movieSearchURL ='http://localhost:3000/search'
@@ -9,9 +9,9 @@ const userLoginURL = 'http://localhost:3000/login'
 const watchListAddURL = 'http://localhost:3000/watch_lists'
 const favoritesAddURL = 'http://localhost:3000/favorites'
 const watchMovieURL = 'http://localhost:3000/movie_watches'
-const deleteMovieUserWatchedURL = 'http://localhost:3000/movie_watches'
-const deleteMovieUserFavoritesURL = 'http://localhost:3000/favorites'
-const deleteMovieUserWatchListURL = 'http://localhost:3000/watch_lists'
+const deleteMovieUserWatchedURL = 'http://localhost:3000/movie_watches/'
+const deleteMovieUserFavoritesURL = 'http://localhost:3000/favorites/'
+const deleteMovieUserWatchListURL = 'http://localhost:3000/watch_lists/'
 
 function fetchedRecommendedMovies(recommendedMoviesArray) {
     return { type: FETCHED_RECOMMENDED_MOVIES, payload: recommendedMoviesArray }
@@ -39,77 +39,66 @@ function movieWatched(movieId) {
     return { type: ADD_MOVIE_TO_WATCHED, payload: movieId}
 }
 
-function movieUserWatchListRemoved(movieId) {
-    return { type: REMOVE_MOVIE_USER_WATCHLIST, payload: movieId }
+function movieUserWatchListRemoved(movieWatchListId) {
+    return { type: REMOVE_MOVIE_USER_WATCHLIST, payload: movieWatchListId }
 }
 
-function movieUserFavoriteRemoved(movieId) {
-    return { type: REMOVE_MOVIE_USER_FAVORITE, payload: movieId}
+function movieUserFavoriteRemoved(movieFavoriteId) {
+    return { type: REMOVE_MOVIE_USER_FAVORITE, payload: movieFavoriteId}
+}
+
+function movieUserWatchedRemoved(movieWatchedId) {
+    return { type: REMOVE_MOVIE_USER_WATCHED, payload: movieWatchedId }
 }
 
 //remove from list of watched movies
-function removeMovieUserWatched(movieId, currentUserId) {
+function removeMovieUserWatched(watchedMovieJoinId) {
     return dispatch => {
-        let body = {
-            movie_id: movieId,
-            user_id: currentUserId
-        }
         let movieUserWatchedConfigObj = {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
-            }, 
-            body: JSON.stringify(body)
+            }
         }
         dispatch(loading())
-        fetch(deleteMovieUserWatchedURL + `/${currentUserId}`, movieUserWatchedConfigObj)
+        fetch(deleteMovieUserWatchedURL + `${watchedMovieJoinId}`, movieUserWatchedConfigObj)
         .then( res => res.json())
-        .then( data => { console.log(data) })
+        .then( movieWatchedId => { dispatch(movieUserWatchedRemoved(movieWatchedId)) })
     }
 }
 
 //delete a movie from a favorites list
-function removeMovieUserFavorite(movieId, currentUserId) {
+function removeMovieUserFavorite(movieFavoriteId) {
     return dispatch => {
-        let body = {
-            movie_id: movieId,
-            user_id: currentUserId
-        }
         let movieUserFavoriteConfigObj = {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
-            }, 
-            body: JSON.stringify(body)
+            }
         }
         dispatch(loading())
-        fetch(deleteMovieUserFavoritesURL + `/${currentUserId}`, movieUserFavoriteConfigObj)
+        fetch(deleteMovieUserFavoritesURL + `${movieFavoriteId}`, movieUserFavoriteConfigObj)
         .then( res => res.json())
-        .then( data => { console.log(data) })
+        .then( movieFavoriteId => { dispatch(movieUserFavoriteRemoved(movieFavoriteId)) })
     }
 }
 
 //delete movie from a to-watch list
-function removeMovieUserWatchList(movieId, currentUserId) {
+function removeMovieUserWatchList(movieWatchListId) {
     return dispatch => {
-        let body = {
-            movie_id: movieId,
-            user_id: currentUserId
-        }
         let movieUserWatchListConfigObj = {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
-            }, 
-            body: JSON.stringify(body)
+            }
         }
         dispatch(loading())
-        fetch(deleteMovieUserWatchListURL + `/${currentUserId}`, movieUserWatchListConfigObj)
+        fetch(deleteMovieUserWatchListURL + `${movieWatchListId[0]}`, movieUserWatchListConfigObj)
         .then( res => res.json())
-        .then( data => console.log(data))
+        .then( movieWatchListId => { dispatch(movieUserWatchListRemoved(movieWatchListId)) })
     }
 }
 
@@ -131,7 +120,13 @@ function watchMovie(currentUserId, movieObj) {
         dispatch(loading())
         fetch(watchMovieURL, movieWatchConfigObj)
         .then(res => res.json())
-        .then( data => { dispatch(movieWatched(data)) })
+        .then( data => { 
+            if ('error' in data) {
+                alert(`${data.error.message}`)
+            } else {
+                dispatch(movieWatched(data))
+            } 
+        })
     }
 }
 
@@ -154,7 +149,13 @@ function addMovieToFavorites(currentUserId, movieObj) {
         dispatch(loading())
         fetch(favoritesAddURL, favoritesConfigObj)
         .then(res => res.json())
-        .then(data => { dispatch(addedMovieToFavorites(data)) })
+        .then(data => { 
+            if ('error' in data) {
+                alert(`${data.error.message}`)
+            } else {
+                dispatch(addedMovieToFavorites(data))
+            } 
+        })
     }
 }
 
@@ -176,7 +177,13 @@ function addMovieToWatchList(currentUserId, movieObj) {
         dispatch(loading())
         fetch(watchListAddURL, watchListConfigObj)
         .then(res => res.json())
-        .then(data => { console.log(data); dispatch(addedMovieToWatchList(data)) })
+        .then(data => { 
+            if ('error' in data) {
+                alert(`${data.error.message}`)
+            } else {
+            dispatch(addedMovieToWatchList(data)) 
+            }
+        })
     }
 }
 

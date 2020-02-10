@@ -10,21 +10,33 @@ class WatchListsController < ApplicationController
             backdrop_path: params[:movie][:backdrop_path],
             api_id: params[:movie][:id]
         ) 
-        watch_list = WatchList.create(movie_id: movie.id, user_id: params[:user_id])
         
-        render json: watch_list.to_json(
-            only: [ :id  ],
-            include: [
-                movie: {
-                    except: [ :created_at, :updated_at ]
+        if WatchList.find_by(movie_id: movie.id, user_id: params[:user_id])
+            render json: {
+                error: {
+                    message: "This film is already on your Watch List!"
                 }
-            ]
-        )
+            }
+        else
+            watch_list = WatchList.create(movie_id: movie.id, user_id: params[:user_id])
+            render json: watch_list.to_json(
+                only: [ :id ],
+                include: [
+                    movie: {
+                        except: [ :created_at, :updated_at ]
+                    }
+                ]
+            )
+        end
+        
+  
     end
 
     def destroy
-        watch_list = WatchList.find_by(user_id: params[:user_id], movie_id: params[:movie_id])
+        watch_list = WatchList.find(params[:id])
+        deleted_movie_watch_list_id = watch_list.id
         watch_list.destroy
+        render json: { id: deleted_movie_watch_list_id }
     end
 end
 

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:create, :update, :destroy]
   resources :genres
   resources :movies, only: [:show, :index, :destroy]
-  resources :users, only: [:create, :index]
+  resources :users, only: [:create, :index, :destroy, :edit, :update]
   post '/search', to: 'movies#search'
   post '/login', to: 'users#login'
   get '/trailer', to: 'movies#random_trailer'

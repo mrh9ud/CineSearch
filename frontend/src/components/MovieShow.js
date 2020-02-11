@@ -2,6 +2,7 @@ import React from 'react'
 import { Header, Grid, Segment, Image, Container, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { addMovieToWatchList, addMovieToFavorites, watchMovie } from '../redux/actionCreators'
+import swal from 'sweetalert'
 
 class MovieShow extends React.Component {
 
@@ -13,7 +14,7 @@ class MovieShow extends React.Component {
             let currentUserId = parseInt(this.props.currentUser.id)
             this.props.addMovieToWatchList(currentUserId, movieObj)
         } else {
-            alert('You must be logged in')
+            swal('You must be logged in')
         }
     }
 
@@ -24,7 +25,7 @@ class MovieShow extends React.Component {
             let currentUserId = parseInt(this.props.currentUser.id)
             this.props.addMovieToFavorites(currentUserId, movieObj)
         } else {
-            alert('You must be logged in')
+            swal('You must be logged in')
         }
     }
     
@@ -34,7 +35,7 @@ class MovieShow extends React.Component {
             let currentMovie = this.props.foundMovie
             this.props.watchMovie(currentUserId, currentMovie)
         } else {
-            alert("You must be logged in")
+            swal("You must be logged in")
         }
     }
 
@@ -96,7 +97,7 @@ class MovieShow extends React.Component {
                                             </Button>
                                             :
                                             <Button
-                                                onClick={ () => alert("You've recently seen this movie!") }
+                                                onClick={ () => swal("You've recently seen this movie!") }
                                                 secondary
                                                 floated="left"
                                                 >Recently Watched    
@@ -105,7 +106,7 @@ class MovieShow extends React.Component {
                                             {this.hasUserFavoritedMovie() === true
                                             ?
                                             <Button
-                                                onClick={ () => alert('This movie is already on your favorites list!') }
+                                                onClick={ () => swal('This movie is already on your favorites list!') }
                                                 floated="left"
                                                 secondary
                                                 >On Your favorites
@@ -128,7 +129,7 @@ class MovieShow extends React.Component {
                                             </Button>
                                             :
                                             <Button
-                                                onClick={ () => alert('This movie is already on your to-watch list!')}
+                                                onClick={ () => swal('This movie is already on your to-watch list!')}
                                                 secondary
                                                 floated="left"
                                                 >On Your Watch List!

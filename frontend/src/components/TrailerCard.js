@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Grid, Segment, Embed, Divider } from 'semantic-ui-react'
+import { Header, Grid, Divider } from 'semantic-ui-react'
 
 class TrailerCard extends React.Component {
 
@@ -10,7 +10,8 @@ class TrailerCard extends React.Component {
             <Grid.Column>
                 <Divider hidden />
                 <Header inverted>{name}</Header>
-                    <iframe 
+                    <iframe
+                        title={name}
                         width="360" 
                         height="300" 
                         src={key} 

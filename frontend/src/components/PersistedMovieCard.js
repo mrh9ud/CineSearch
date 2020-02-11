@@ -3,6 +3,7 @@ import { Card, Image, Modal, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import PersistedMovieModal from './PersistedMovieModal'
 import { removeMovieUserWatchList, removeMovieUserFavorite, removeMovieUserWatched } from '../redux/actionCreators'
+import swal from 'sweetalert'
 
 class PersistedMovieCard extends React.Component {
     
@@ -27,7 +28,7 @@ class PersistedMovieCard extends React.Component {
                 this.props.removeMovieUserWatched(movieWatchesId) 
             }
         } else {
-            alert('You Must be Logged in.')
+            swal('You Must be Logged in.')
         }
     }
 
@@ -40,9 +41,9 @@ class PersistedMovieCard extends React.Component {
                                         src={poster_path} 
                                         wrapped ui={false} />
                                     <Button
-                                        onClick={ () => this.removeMovieUserAssoc() }
+                                        onClick={ () => { this.removeMovieUserAssoc() }}
                                         >Remove
-                                    </Button>  
+                                    </Button> 
                                 </Card>}>
                     <Modal.Content image >
                         <PersistedMovieModal movie={this.props.movie}/>

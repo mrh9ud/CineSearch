@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Header, Grid, Button, Image, Segment } from 'semantic-ui-react'
+import { Header, Grid, Button, Image, Segment, Modal } from 'semantic-ui-react'
+import { deleteCurrentUser, editCurrentUser } from '../redux/actionCreators'
+import EditUserFormModal from './EditUserFormModal'
 
 class Profile extends React.Component {
 
@@ -15,14 +17,19 @@ class Profile extends React.Component {
                         <Grid.Column>
                             
                             <Segment>
+                                <Header as='h4'>Avatar</Header>
                                 <Image src={img} alt={'Profile Picture'} />
                             </Segment>
-                                  
-                                <Button 
-                                    positive
-                                    >Edit Profile
-                                </Button>
-
+                                <Modal trigger={ 
+                                    <Button 
+                                        positive
+                                        >Edit Profile
+                                    </Button>}> 
+                                    <Modal.Content>
+                                        <EditUserFormModal/>
+                                    </Modal.Content>
+                                </Modal> 
+                               
                             <Segment>
                                 <p>Birthday: {birthday}</p>
                                 <p> {undefined}</p>
@@ -57,7 +64,7 @@ class Profile extends React.Component {
                                 <Button 
                                     float='right'
                                     negative
-                                    onClick={undefined}    
+                                    onClick={ () => this.props.deleteCurrentUser(this.props.currentUser.id)}    
                                     >Delete Profile
                                 </Button>
                             </Segment>  
@@ -70,6 +77,12 @@ class Profile extends React.Component {
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return ({
+        deleteCurrentUser: (userId) => dispatch(deleteCurrentUser(userId)),
+  editCurrentUser: (currentUserObj) => dispatch(editCurrentUser(currentUserObj)) })
+}
+
 const mapStateToProps = store => ({ currentUser: store.currentUser })
 
-export default connect(mapStateToProps)(Profile)
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)

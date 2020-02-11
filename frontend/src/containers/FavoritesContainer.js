@@ -10,7 +10,7 @@ class FavoritesContainer extends React.Component {
             <React.Fragment>
                 <Container>
                     <Header textAlign='center' inverted size="large">Your Favorite Movies</Header>
-                    {this.props.currentUser 
+                    {this.props.currentUser && this.props.currentUser.favorites.length !== 0
                     ?
                     <Card.Group className='stackable' itemsPerRow={5}>
                         {this.props.currentUser.favorites.map( favoriteObj => {
@@ -21,7 +21,7 @@ class FavoritesContainer extends React.Component {
                         }})}
                     </Card.Group>
                     :
-                    <h3>Your Favorites is Empty</h3>}
+                    <h3>Currently no Favorites</h3>}
                 </Container>
             </React.Fragment>
         )

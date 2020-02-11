@@ -14,26 +14,17 @@ class PersistedMovieCard extends React.Component {
             let watched = 'watched'
 
             if (URLString === watchList) {
-                let movieWatchListObjId = this.props.currentUser.watch_lists.forEach( movieWatchListObj => {
-                    if (movieWatchListObj.movie.id === this.props.movie.id) {
-                        return movieWatchListObj.id
-                    }
-                })
-                this.props.removeMovieUserWatchList(movieWatchListObjId)
+                let movieWatchListObj = this.props.currentUser.watch_lists.find( movieWatchListObj => movieWatchListObj.movie.id === this.props.movie.id )
+                let movieWatchListId = movieWatchListObj.id
+                this.props.removeMovieUserWatchList(movieWatchListId)
             } else if (URLString === favorites) {
-                let movieFavoriteObjId = this.props.currentUser.favorites.map( favoritesObj => {
-                    if (favoritesObj.movie.id === this.props.movie.id) {
-                        return favoritesObj.id
-                    }
-                })
-                this.props.removeMovieUserFavorite(movieFavoriteObjId) 
+                let movieFavoriteObj = this.props.currentUser.favorites.find( favoritesObj => favoritesObj.movie.id === this.props.movie.id )
+                let movieFavoriteId = movieFavoriteObj.id
+                this.props.removeMovieUserFavorite(movieFavoriteId) 
             } else if (URLString === watched) {
-                let movieWatchesObjId = this.props.currentUser.movie_watches.forEach( movieWatchesObj => {
-                    if (movieWatchesObj.movie.id === this.props.movie.id) {
-                        return movieWatchesObj.id
-                    }
-                })
-                this.props.removeMovieUserWatched(movieWatchesObjId) 
+                let movieWatchesObj = this.props.currentUser.movie_watches.find( movieWatchesObj => movieWatchesObj.movie.id === this.props.movie.id )
+                let movieWatchesId = movieWatchesObj.id
+                this.props.removeMovieUserWatched(movieWatchesId) 
             }
         } else {
             alert('You Must be Logged in.')

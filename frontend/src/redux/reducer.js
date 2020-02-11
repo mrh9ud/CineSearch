@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
 import { FETCHED_RECOMMENDED_MOVIES, FETCHED_SEARCHED_MOVIES, LOGIN_USER, 
         ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, LOGOUT_USER, ADD_MOVIE_TO_WATCHED, 
-        REMOVE_MOVIE_USER_WATCHED, REMOVE_MOVIE_USER_WATCHLIST, REMOVE_MOVIE_USER_FAVORITE } from './actionType'
+        REMOVE_MOVIE_USER_WATCHED, REMOVE_MOVIE_USER_WATCHLIST, REMOVE_MOVIE_USER_FAVORITE,
+        RENDER_RANDOM_TRAILER } from './actionType'
 
 const moviesReducer = (oldState=[], action) => {
     switch(action.type) {
@@ -11,6 +12,15 @@ const moviesReducer = (oldState=[], action) => {
         case FETCHED_SEARCHED_MOVIES:
             return action.payload
             
+        default:
+            return oldState
+    }
+}
+
+const movieTrailerReducer = (oldState=[], action) => {
+    switch(action.type) {
+        case RENDER_RANDOM_TRAILER:
+            return action.payload
         default:
             return oldState
     }
@@ -35,7 +45,7 @@ const currentUserReducer = (oldState=null, action) => {
         case REMOVE_MOVIE_USER_WATCHLIST:
             const remainingWatchListMovies = {
                 ...oldState, watch_lists: [
-                    ...oldState.watch_lists.filter( watchListMovieObj => watchListMovieObj.id !== action.payload.id )
+                    ...oldState.watch_lists.filter( watchListMovieObj => watchListMovieObj.id.toString() !== action.payload.id )
                 ]
             }
             return remainingWatchListMovies
@@ -43,7 +53,7 @@ const currentUserReducer = (oldState=null, action) => {
         case REMOVE_MOVIE_USER_WATCHED:
             const remainingMoviesWatched = {
                     ...oldState, movie_watches: [ 
-                        ...oldState.movie_watches.filter( watchedMovieObj => watchedMovieObj.id !== action.payload.id )
+                        ...oldState.movie_watches.filter( watchedMovieObj => watchedMovieObj.id.toString() !== action.payload.id )
                     ]
             }
             return remainingMoviesWatched
@@ -79,7 +89,8 @@ const currentUserReducer = (oldState=null, action) => {
 
 const rootReducer = combineReducers({
     moviesArray: moviesReducer,
-    currentUser: currentUserReducer
+    currentUser: currentUserReducer,
+    trailerArray: movieTrailerReducer
 })
 
 export default rootReducer

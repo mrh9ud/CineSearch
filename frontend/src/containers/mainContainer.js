@@ -5,6 +5,7 @@ import SearchBar from '../components/SearchBar'
 import WatchListContainer from './WatchListContainer'
 import FavoritesContainer from './FavoritesContainer'
 import WatchedContainer from './WatchedContainer'
+import TrailerContainer from './TrailerContainer'
 import MovieShow from '../components/MovieShow'
 import LoginForm from '../components/LoginForm'
 import Profile from '../components/Profile'
@@ -29,7 +30,6 @@ class MainContainer extends React.Component {
             if (foundApiMovie !== undefined) {
                 return foundApiMovie
             }
-        // else conditional for the case no user is logged in to show detail page for movie
         } else {
             return foundApiMovie
         }
@@ -64,7 +64,11 @@ class MainContainer extends React.Component {
                 <Route exact path='/profile' render={ () => (this.props.currentUser === null)
                     ? <Redirect to='/login' /> : <Profile/>} />
                     
-                <Route exact path ='/' component={Home} />
+                <Route exact path ='/' render = { () => 
+                    <React.Fragment>
+                        <Home/>
+                        <TrailerContainer/>
+                    </React.Fragment>} />
             </Switch>
             )
             :

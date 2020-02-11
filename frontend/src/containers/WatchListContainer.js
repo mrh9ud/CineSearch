@@ -21,7 +21,7 @@ class WatchListContainer extends React.Component {
                         }})}
                     </Card.Group>
                     :
-                    <h3>Your Watch List is Empty</h3>}
+                    <h3>Watch List is Empty</h3>}
                 </Container>
             </React.Fragment>
         )

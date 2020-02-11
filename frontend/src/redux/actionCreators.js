@@ -1,6 +1,7 @@
 import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER, 
         ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, ADD_MOVIE_TO_WATCHED, LOGOUT_USER, 
-        REMOVE_MOVIE_USER_WATCHLIST, REMOVE_MOVIE_USER_FAVORITE, REMOVE_MOVIE_USER_WATCHED } from './actionType'
+        REMOVE_MOVIE_USER_WATCHLIST, REMOVE_MOVIE_USER_FAVORITE, REMOVE_MOVIE_USER_WATCHED,
+        RENDER_RANDOM_TRAILER } from './actionType'
 
 const movieRecURL = 'http://localhost:3000/movies'
 const movieSearchURL ='http://localhost:3000/search'
@@ -12,14 +13,13 @@ const watchMovieURL = 'http://localhost:3000/movie_watches'
 const deleteMovieUserWatchedURL = 'http://localhost:3000/movie_watches/'
 const deleteMovieUserFavoritesURL = 'http://localhost:3000/favorites/'
 const deleteMovieUserWatchListURL = 'http://localhost:3000/watch_lists/'
+const getRandomMovieTrailerURL = 'http://localhost:3000/trailer'
 
-function fetchedRecommendedMovies(recommendedMoviesArray) {
-    return { type: FETCHED_RECOMMENDED_MOVIES, payload: recommendedMoviesArray }
-}
+function fetchedRecommendedMovies(recommendedMoviesArray) { return { type: FETCHED_RECOMMENDED_MOVIES, payload: recommendedMoviesArray } }
 
-function fetchedSearchedMovies(searchedMoviesArray) {
-    return { type: FETCHED_SEARCHED_MOVIES, payload: searchedMoviesArray }
-}
+function fetchedSearchedMovies(searchedMoviesArray) { return { type: FETCHED_SEARCHED_MOVIES, payload: searchedMoviesArray } }
+
+function fetchedRandomMovieTrailer(movieTrailer) { return { type: RENDER_RANDOM_TRAILER, payload: movieTrailer } }
 
 function loading() { return {type: LOADING} }
 
@@ -27,28 +27,25 @@ function loginUser(userObj) { return { type: LOGIN_USER, payload: userObj} }
 
 function logOutUser() { return { type: LOGOUT_USER } }
 
-function addedMovieToWatchList(movieId) {
-    return { type: ADD_TO_WATCH_LIST, payload: movieId}
-}
+function addedMovieToWatchList(movieId) { return { type: ADD_TO_WATCH_LIST, payload: movieId} }
 
-function addedMovieToFavorites(movieId) {
-    return { type: ADD_MOVIE_TO_FAVORITES, payload: movieId}
-}
+function addedMovieToFavorites(movieId) { return { type: ADD_MOVIE_TO_FAVORITES, payload: movieId} }
 
-function movieWatched(movieId) {
-    return { type: ADD_MOVIE_TO_WATCHED, payload: movieId}
-}
+function movieWatched(movieId) { return { type: ADD_MOVIE_TO_WATCHED, payload: movieId} }
 
-function movieUserWatchListRemoved(movieWatchListId) {
-    return { type: REMOVE_MOVIE_USER_WATCHLIST, payload: movieWatchListId }
-}
+function movieUserWatchListRemoved(movieWatchListId) { return { type: REMOVE_MOVIE_USER_WATCHLIST, payload: movieWatchListId } }
 
-function movieUserFavoriteRemoved(movieFavoriteId) {
-    return { type: REMOVE_MOVIE_USER_FAVORITE, payload: movieFavoriteId}
-}
+function movieUserFavoriteRemoved(movieFavoriteId) { return { type: REMOVE_MOVIE_USER_FAVORITE, payload: movieFavoriteId} }
 
-function movieUserWatchedRemoved(movieWatchedId) {
-    return { type: REMOVE_MOVIE_USER_WATCHED, payload: movieWatchedId }
+function movieUserWatchedRemoved(movieWatchedId) { return { type: REMOVE_MOVIE_USER_WATCHED, payload: movieWatchedId } }
+
+function fetchingRandomMovieTrailer() {
+    return dispatch => {
+        dispatch(loading())
+        fetch(getRandomMovieTrailerURL)
+        .then( res => res.json())
+        .then( movieTrailerArray => dispatch(fetchedRandomMovieTrailer(movieTrailerArray)) )
+    }
 }
 
 //remove from list of watched movies
@@ -87,7 +84,6 @@ function removeMovieUserFavorite(movieFavoriteId) {
 
 //delete movie from a to-watch list
 function removeMovieUserWatchList(movieWatchListId) {
-    debugger
     return dispatch => {
         let movieUserWatchListConfigObj = {
             method: "DELETE",
@@ -97,7 +93,7 @@ function removeMovieUserWatchList(movieWatchListId) {
             }
         }
         dispatch(loading())
-        fetch(deleteMovieUserWatchListURL + `${movieWatchListId[0]}`, movieUserWatchListConfigObj)
+        fetch(deleteMovieUserWatchListURL + `${movieWatchListId}`, movieUserWatchListConfigObj)
         .then( res => res.json())
         .then( movieWatchListId => { dispatch(movieUserWatchListRemoved(movieWatchListId)) })
     }
@@ -265,11 +261,17 @@ function fetchingSearchedMovies(searchTerm) {
         fetch(movieSearchURL, configObj)
         .then(res => res.json())
         .then(searchedMoviesArray => {
-            dispatch(fetchedSearchedMovies(searchedMoviesArray))
+            if ('error' in searchedMoviesArray) {
+                alert(`${searchedMoviesArray.error.message}`)
+            } else if (searchedMoviesArray.length === 0) {
+                alert('No Search Results')
+            } else {
+                dispatch(fetchedSearchedMovies(searchedMoviesArray))
+            }
         })
     }
 }
 
 export { fetchingRecommendedMovies, fetchingSearchedMovies, createNewUser, verifyUser, 
         addMovieToWatchList, addMovieToFavorites, watchMovie, logOutUser, removeMovieUserWatchList, 
-        removeMovieUserFavorite, removeMovieUserWatched }
+        removeMovieUserFavorite, removeMovieUserWatched, fetchingRandomMovieTrailer }

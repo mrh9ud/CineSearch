@@ -2,6 +2,7 @@ import React from 'react'
 import { Header, Form, Button, Container } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { createNewUser, verifyUser } from '../redux/actionCreators'
+import { withRouter } from 'react-router-dom'
 
 class LoginForm extends React.Component {
     state = {
@@ -23,7 +24,7 @@ class LoginForm extends React.Component {
         this.setState({ [event.target.name]: event.target.value })
     }
 
-    processNewUserLogin = () => {
+    processNewUserLogin = (event) => {
         let newUserFormData = {
             username: this.state.username,
             password: this.state.password,
@@ -34,6 +35,8 @@ class LoginForm extends React.Component {
             region: this.state.region
         } 
         this.props.createNewUser(newUserFormData)
+        event.target.parentNode.reset()
+        this.props.history.push('/')
     }
 
     processExistingUserLogin = (event) => {
@@ -42,6 +45,8 @@ class LoginForm extends React.Component {
             password: this.state.password
         }
         this.props.verifyUser(existingUserFormData)
+        event.target.parentNode.reset()
+        this.props.history.push('/')
     }
 
     
@@ -160,7 +165,7 @@ const mapStateToProps = store => ({ currentUser: store.currentUser })
 
 const mapDispatchToProps = dispatch => {
     return ({ createNewUser: (userObj) => dispatch(createNewUser(userObj)),
-              verifyUser: (userObj) => dispatch(verifyUser(userObj)) })
+                 verifyUser: (userObj) => dispatch(verifyUser(userObj)) })
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginForm))

@@ -3,13 +3,14 @@ import { withRouter } from 'react-router-dom'
 import './App.css';
 import MainContainer from './containers/MainContainer'
 import NavBar from './components/NavBar'
-import { fetchingRecommendedMovies } from './redux/actionCreators'
+import { fetchingRecommendedMovies, fetchingRandomMovieTrailer } from './redux/actionCreators'
 import { connect } from 'react-redux'
 
 class App extends React.Component {
   
   componentDidMount() {
     this.props.fetchingRecommendedMovies()
+    this.props.fetchingRandomMovieTrailer()
   }
 
   render() {
@@ -23,7 +24,7 @@ class App extends React.Component {
 }
   
 const mapDispatchToProps = (dispatch) => ({
-  fetchingRecommendedMovies: () => dispatch(fetchingRecommendedMovies())
-})
+  fetchingRecommendedMovies: () => dispatch(fetchingRecommendedMovies()),
+ fetchingRandomMovieTrailer: () => dispatch(fetchingRandomMovieTrailer()) })
 
 export default withRouter(connect(null, mapDispatchToProps)(App));

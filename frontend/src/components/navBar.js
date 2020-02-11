@@ -47,7 +47,7 @@ class NavBar extends React.Component {
                         :
                         <React.Fragment>
                             <NavLink to='/profile'>
-                                <Menu.Item name='profile'><Image fluid src={this.props.currentUser.img} alt={'profile picture'}/></Menu.Item>
+                                <Menu.Item name='profile'><Image circular={true} fluid src={this.props.currentUser.img} alt={'profile picture'} size='mini'/></Menu.Item>
                             </NavLink>
                             <Button
                                 size='mini'

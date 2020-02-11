@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :index]
   post '/search', to: 'movies#search'
   post '/login', to: 'users#login'
+  get '/trailer', to: 'movies#random_trailer'
 
 end

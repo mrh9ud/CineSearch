@@ -7,8 +7,10 @@ const moviesReducer = (oldState=[], action) => {
     switch(action.type) {
         case FETCHED_RECOMMENDED_MOVIES:
             return action.payload
+
         case FETCHED_SEARCHED_MOVIES:
             return action.payload
+            
         default:
             return oldState
     }
@@ -18,8 +20,10 @@ const currentUserReducer = (oldState=null, action) => {
     switch(action.type) {
         case LOGIN_USER:
             return action.payload
+
         case LOGOUT_USER:
             return null
+
         case REMOVE_MOVIE_USER_FAVORITE:
             const remainingFavoritedMovies = {
                 ...oldState, favorites: [
@@ -27,6 +31,7 @@ const currentUserReducer = (oldState=null, action) => {
                 ]
             }
             return remainingFavoritedMovies
+
         case REMOVE_MOVIE_USER_WATCHLIST:
             const remainingWatchListMovies = {
                 ...oldState, watch_lists: [
@@ -34,6 +39,7 @@ const currentUserReducer = (oldState=null, action) => {
                 ]
             }
             return remainingWatchListMovies
+
         case REMOVE_MOVIE_USER_WATCHED:
             const remainingMoviesWatched = {
                     ...oldState, movie_watches: [ 
@@ -41,6 +47,7 @@ const currentUserReducer = (oldState=null, action) => {
                     ]
             }
             return remainingMoviesWatched
+
         case ADD_TO_WATCH_LIST:
             const newWatchListItem = {
                 ...oldState, watch_lists: [
@@ -48,6 +55,7 @@ const currentUserReducer = (oldState=null, action) => {
                 ]
             }
             return newWatchListItem
+
         case ADD_MOVIE_TO_FAVORITES:
             const newFavorite = {
                 ...oldState, favorites: [
@@ -55,6 +63,7 @@ const currentUserReducer = (oldState=null, action) => {
                 ]
             }
             return newFavorite
+
         case ADD_MOVIE_TO_WATCHED:
             const newWatchedMovie = {
                 ...oldState, movie_watches: [
@@ -62,6 +71,7 @@ const currentUserReducer = (oldState=null, action) => {
                 ]
             }
             return newWatchedMovie
+
         default:
             return oldState
     }

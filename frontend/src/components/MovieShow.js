@@ -4,11 +4,6 @@ import { connect } from 'react-redux'
 import { addMovieToWatchList, addMovieToFavorites, watchMovie } from '../redux/actionCreators'
 
 class MovieShow extends React.Component {
-    //logic for showing different text for favorite and watch list buttons not functional based on status
-
-    componentDidMount = () => {
-
-    }
 
     findMovieToAddWatchList = () => {
         if (this.props.currentUser) {
@@ -33,7 +28,6 @@ class MovieShow extends React.Component {
         }
     }
     
-    //marks a movie as watched ... toggles boolean
     watchMovie = () => {
         if (this.props.currentUser) {
             let currentUserId = this.props.currentUser.id
@@ -43,9 +37,29 @@ class MovieShow extends React.Component {
             alert("You must be logged in")
         }
     }
-    //returns a boolean to determine which favoriting button to show
-    hasUserFavoritedMovie = () => {
 
+    hasUserFavoritedMovie = () => {
+            if (this.props.currentUser.favorites.find( favoriteObj => favoriteObj.movie.id === this.props.foundMovie.id) !== undefined) {
+                return true
+            } else {
+                return false
+            }
+    }
+
+    hasUserWatchedMovie = () => {
+            if (this.props.currentUser.movie_watches.find( movieWatchesObj => movieWatchesObj.movie.id === this.props.foundMovie.id) !== undefined) {
+                return true
+            } else {
+                return false
+            }
+    }
+
+    isMovieOnUserWatchList = () => {
+        if (this.props.currentUser.watch_lists.find( watchListObj => watchListObj.movie.id === this.props.foundMovie.id) !== undefined) {
+            return true
+        } else {
+            return false
+        }
     }
 
     render() {
@@ -62,38 +76,66 @@ class MovieShow extends React.Component {
                                 <Grid.Column>
 
                                     <Segment>
-                                        <Header as="h3">Movie Cover</Header>
-                                        <Button
-                                            onClick={this.watchMovie}
-                                            >Already Watched?
-                                        </Button>
-                                        <Image wrapped size='medium' src={poster_path} alt={original_title} />
-                                        {/* {!this.props.currentUser.favorites.includes(this.findThisMovie()) */}
-                                        {/* ? */}
-                                        <Button 
-                                            floated="left"
-                                            onClick={this.findMovieToFavorite}
-                                            >Favorite
-                                        </Button>
-                                        {/* :
-                                        <Button
-                                            floated="left"
-                                            >On Your favorites
-                                        </Button>
-                                        } */}
-                                        {/* {!this.props.currentUser.watch_lists.includes(this.findThisMovie())
-                                        ? */}
-                                        <Button 
-                                            floated="right"
-                                            onClick={this.findMovieToAddWatchList}
-                                            >Add to your Watch List
-                                        </Button>
-                                        {/* :
-                                        <Button
-                                            floated="right"
-                                            >On Your Watch List!
-                                        </Button>
-                                        } */}
+                                        {!this.props.currentUser
+                                        ?
+                                        <React.Fragment>
+                                            <Header as="h3">Movie Cover</Header>
+                                            <Image wrapped size='medium' src={poster_path} alt={original_title} />
+                                        </React.Fragment>
+                                        :
+                                        <React.Fragment>
+                                            <Header as="h3">Movie Cover</Header>
+                                            <Image wrapped size='medium' src={poster_path} alt={original_title} />
+                                            {this.hasUserWatchedMovie() === false
+                                            ?
+                                            <Button
+                                                floated="left"
+                                                primary
+                                                onClick={this.watchMovie}
+                                                >Click to Mark as Watched
+                                            </Button>
+                                            :
+                                            <Button
+                                                onClick={ () => alert("You've recently seen this movie!") }
+                                                secondary
+                                                floated="left"
+                                                >Recently Watched    
+                                            </Button>
+                                            }
+                                            {this.hasUserFavoritedMovie() === true
+                                            ?
+                                            <Button
+                                                onClick={ () => alert('This movie is already on your favorites list!') }
+                                                floated="left"
+                                                secondary
+                                                >On Your favorites
+                                            </Button>
+                                            :
+                                            <Button 
+                                                primary
+                                                floated="left"
+                                                onClick={this.findMovieToFavorite}
+                                                >Favorite
+                                            </Button>
+                                            }
+                                            {this.isMovieOnUserWatchList() === false
+                                            ?
+                                            <Button 
+                                                primary
+                                                floated="left"
+                                                onClick={this.findMovieToAddWatchList}
+                                                >Add to your Watch List
+                                            </Button>
+                                            :
+                                            <Button
+                                                onClick={ () => alert('This movie is already on your to-watch list!')}
+                                                secondary
+                                                floated="left"
+                                                >On Your Watch List!
+                                            </Button>
+                                            }
+                                        </React.Fragment>
+                                        }
                                     </Segment>
 
                                 </Grid.Column>

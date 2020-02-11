@@ -14,7 +14,7 @@ class PersistedMovieCard extends React.Component {
             let watched = 'watched'
 
             if (URLString === watchList) {
-                let movieWatchListObjId = this.props.currentUser.watch_lists.map( movieWatchListObj => {
+                let movieWatchListObjId = this.props.currentUser.watch_lists.forEach( movieWatchListObj => {
                     if (movieWatchListObj.movie.id === this.props.movie.id) {
                         return movieWatchListObj.id
                     }
@@ -28,7 +28,7 @@ class PersistedMovieCard extends React.Component {
                 })
                 this.props.removeMovieUserFavorite(movieFavoriteObjId) 
             } else if (URLString === watched) {
-                let movieWatchesObjId = this.props.currentUser.movie_watches.map( movieWatchesObj => {
+                let movieWatchesObjId = this.props.currentUser.movie_watches.forEach( movieWatchesObj => {
                     if (movieWatchesObj.movie.id === this.props.movie.id) {
                         return movieWatchesObj.id
                     }

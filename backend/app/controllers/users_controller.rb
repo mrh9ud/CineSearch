@@ -75,7 +75,7 @@ class UsersController < ApplicationController
                     ]
                 },
                 watch_lists: {
-                    only: [ :id, :watched ],
+                    only: [ :id ],
                     include: [
                         movie: { except: [ :created_at, :updated_at ] }
                     ]

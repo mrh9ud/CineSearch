@@ -87,6 +87,7 @@ function removeMovieUserFavorite(movieFavoriteId) {
 
 //delete movie from a to-watch list
 function removeMovieUserWatchList(movieWatchListId) {
+    debugger
     return dispatch => {
         let movieUserWatchListConfigObj = {
             method: "DELETE",

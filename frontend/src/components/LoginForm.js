@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Form, Button, Container } from 'semantic-ui-react'
+import { Header, Form, Button, Container, Label, Input } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { createNewUser, verifyUser } from '../redux/actionCreators'
 import { withRouter } from 'react-router-dom'
@@ -10,7 +10,7 @@ class LoginForm extends React.Component {
 		username: '',
 		password: '',
 		name: '',
-		birthdate: '',
+		birthday: '',
 		bio: '',
 		img: '',
 		region: '',
@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
             username: this.state.username,
             password: this.state.password,
             name: this.state.name,
-            birthdate: this.state.birthdate,
+            birthday: this.state.birthday,
             bio: this.state.bio,
             img: this.state.img,
             region: this.state.region
@@ -53,24 +53,27 @@ class LoginForm extends React.Component {
     render() {
         return (
             <Container>
-                <Header textAlign='center' inverted size="large">CineSearch</Header>
                 <Form>
+                    <Header textAlign='center' color="yellow" size="large">CineSearch</Header>
                     <Form.Group widths='equal'>
-                    <Form.Input 
-                        fluid 
-                        name="username" 
-                        label="Username"
-                        placeholder="user123"
-                        onChange={this.handleFormChange}
-                    />
-                    <Form.Input 
-                        fluid 
-                        type="password"
-                        name="password" 
-                        label="Password"
-                        placeholder="password..."
-                        onChange={this.handleFormChange}
-                    />
+                        <Form.Field>
+                            <Label style={{color: 'teal'}}>Username</Label>
+                            <Input
+                                fluid 
+                                name="username" 
+                                placeholder="user123"
+                                onChange={this.handleFormChange}
+                            />
+                        </Form.Field>
+                        <Form.Field>
+                            <Label style={{color: 'teal'}}>Password</Label>
+                            <Input
+                                fluid 
+                                type="password"
+                                placeholder="password..."
+                                onChange={this.handleFormChange}
+                            />
+                        </Form.Field> 
                     </Form.Group>
                     {this.state.newAccount
                     ?
@@ -97,8 +100,8 @@ class LoginForm extends React.Component {
                             <Form.Input
                                 required 
                                 fluid 
-                                name="birthdate" 
-                                label="Birthdate"
+                                name="birthday" 
+                                label="Birthday"
                                 placeholder="Jan 20, 1978"
                                 onChange={this.handleFormChange}
                             />

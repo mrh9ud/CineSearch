@@ -5,19 +5,24 @@ import { connect } from 'react-redux'
 class Home extends React.Component {
 
     render() {
-        return (
-            <React.Fragment>
-                {this.props.currentUser
-                ?
-                <Header textAlign='center' inverted size="large" >Welcome to CineSearch {this.props.currentUser.username}</Header>
-                :
-                <Header textAlign='center' inverted size='large' >Welcome to CineSearch</Header>
-                }
-            </React.Fragment>
-        )
+        if (this.props.trailerArray.length !== 0) {
+            return (
+                <React.Fragment>
+                    <Header as="h1" inverted color="yellow" textAlign="center">
+                        {this.props.trailerArray.length === 1 
+                        ? 
+                        `Top Movie Trailer from ${this.props.trailerArray[0].site}` 
+                        : 
+                        `Top Movie Trailers from ${this.props.trailerArray[0].site}`}
+                    </Header>
+                </React.Fragment>
+            )
+        } else {
+            return null
+        }
     }
 }
 
-const mapStateToProps = store => ({ currentUser: store.currentUser })
+const mapStateToProps = store => ({ currentUser: store.currentUser, trailerArray: store.trailerArray })
 
 export default connect(mapStateToProps)(Home)

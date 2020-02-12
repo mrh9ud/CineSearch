@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { editCurrentUser } from '../redux/actionCreators'
-import { Form, Button } from 'semantic-ui-react'
+import { Form, Button, Container } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
 
 class EditUserFormModal extends React.Component {
@@ -29,82 +29,84 @@ class EditUserFormModal extends React.Component {
     render() {
         console.log(this.props)
         return (
-            <Form>
-                <Form.Group widths='equal'>
-                    <Form.Input 
-                        fluid 
-                        name="username" 
-                        label="Username"
-                        placeholder="user123"
-                        value={this.state.username}
-                        onChange={this.handleFormChange}
-                    />
-                    <Form.Input 
-                        fluid 
-                        type="password"
-                        name="password" 
-                        label="Password"
-                        placeholder="password..."
-                        value={this.state.password}
-                        onChange={this.handleFormChange}
-                    />
-                </Form.Group>
+            <Container>
+                <Form>
+                    <Form.Group widths='equal'>
+                        <Form.Input 
+                            fluid 
+                            name="username" 
+                            label="Username"
+                            placeholder="user123"
+                            value={this.state.username}
+                            onChange={this.handleFormChange}
+                        />
+                        <Form.Input 
+                            fluid 
+                            type="password"
+                            name="password" 
+                            label="Password"
+                            placeholder="password..."
+                            value={this.state.password}
+                            onChange={this.handleFormChange}
+                        />
+                    </Form.Group>
 
-                <Form.Group widths='equal'>
-                    <Form.Input
-                        required
-                        fluid 
-                        name="name" 
-                        label="Full Name"
-                        placeholder="Name Here"
-                        value={this.state.name}
-                        onChange={this.handleFormChange}
-                    />
-                    <Form.Input 
-                        required
-                        fluid 
-                        name="region" 
-                        label="Region"
-                        placeholder="Washington, DC"
-                        value={this.state.region}
-                        onChange={this.handleFormChange}
-                    />
-                </Form.Group>
-                <Form.Group widths='equal'>
-                    <Form.Input
-                        required 
-                        fluid 
-                        name="birthday" 
-                        label="Birthday"
-                        placeholder="Jan 20, 1978"
-                        value={this.state.birthday}
-                        onChange={this.handleFormChange}
-                    />
-                    <Form.Input 
-                        required
-                        fluid 
-                        name="img" 
-                        label="Profile Image"
-                        placeholder="www.sweetpics.com/yourimage.jpg"
-                        value={this.state.img}
-                        onChange={this.handleFormChange}
-                    />
-                </Form.Group>
-                    <Form.TextArea
-                        required
-                        name="bio"
-                        label='Bio'
-                        placeholder='Just a little bit about you here'
-                        value={this.state.bio}
-                        onChange={this.handleFormChange}
-                    />
-                    <Button 
-                        floated="right" 
-                        primary
-                        onClick={this.handleSubmit}
-                        >Submit Your Changes
-                    </Button>
-            </Form>
+                    <Form.Group widths='equal'>
+                        <Form.Input
+                            required
+                            fluid 
+                            name="name" 
+                            label="Full Name"
+                            placeholder="Name Here"
+                            value={this.state.name}
+                            onChange={this.handleFormChange}
+                        />
+                        <Form.Input 
+                            required
+                            fluid 
+                            name="region" 
+                            label="Region"
+                            placeholder="Washington, DC"
+                            value={this.state.region}
+                            onChange={this.handleFormChange}
+                        />
+                    </Form.Group>
+                    <Form.Group widths='equal'>
+                        <Form.Input
+                            required 
+                            fluid 
+                            name="birthday" 
+                            label="Birthday"
+                            placeholder="Jan 20, 1978"
+                            value={this.state.birthday}
+                            onChange={this.handleFormChange}
+                        />
+                        <Form.Input 
+                            required
+                            fluid 
+                            name="img" 
+                            label="Profile Image"
+                            placeholder="www.sweetpics.com/yourimage.jpg"
+                            value={this.state.img}
+                            onChange={this.handleFormChange}
+                        />
+                    </Form.Group>
+                        <Form.TextArea
+                            required
+                            name="bio"
+                            label='Bio'
+                            placeholder='Just a little bit about you here'
+                            value={this.state.bio}
+                            onChange={this.handleFormChange}
+                        />
+                        <Button 
+                            floated="right" 
+                            primary
+                            onClick={this.handleSubmit}
+                            >Submit Your Changes
+                        </Button>
+                </Form>
+            </Container>
         )
     }
 }

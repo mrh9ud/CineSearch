@@ -42,3 +42,8 @@
   }
 }
 
+.ui.label {
+  background-color: transparent;
+  padding-bottom: 10px
+}
+

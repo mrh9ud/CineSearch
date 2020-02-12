@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     end
 
     def create
+        byebug
         user = User.create(
             username: params[:username], 
             password: params[:password], 

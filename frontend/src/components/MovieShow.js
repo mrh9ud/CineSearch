@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Grid, Segment, Image, Container, Button } from 'semantic-ui-react'
+import { Header, Grid, Segment, Image, Container, Button, Message } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { addMovieToWatchList, addMovieToFavorites, watchMovie } from '../redux/actionCreators'
 import swal from 'sweetalert'
@@ -82,6 +82,12 @@ class MovieShow extends React.Component {
                                         <React.Fragment>
                                             <Header as="h3">Movie Cover</Header>
                                             <Image wrapped size='medium' src={poster_path} alt={original_title} />
+                                            <Message>
+                                                <Message.Content>
+                                                    Login to start tracking this movie!
+                                                </Message.Content>
+                                            </Message>
+
                                         </React.Fragment>
                                         :
                                         <React.Fragment>

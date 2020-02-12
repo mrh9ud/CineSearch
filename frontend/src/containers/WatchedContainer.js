@@ -1,17 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, Container, Header } from 'semantic-ui-react'
+import { Card, Container, Header, Button, Message } from 'semantic-ui-react'
 import PersistedMovieCard from '../components/PersistedMovieCard'
 import uuid from 'react-uuid'
+import { withRouter } from 'react-router-dom'
 
 class WatchedContainer extends React.Component {
     render() {
         return (
-            <React.Fragment>
-                <Container>
+            <Container>
+                {this.props.currentUser && this.props.currentUser.movie_watches.length !== 0
+                ?
+                <React.Fragment>
                     <Header textAlign='center' inverted size="large">Recently Viewed Movies</Header>
-                    {this.props.currentUser && this.props.currentUser.movie_watches.length !== 0
-                    ?
                     <Card.Group className='stackable' itemsPerRow={5}>
                         {this.props.currentUser.movie_watches.map( movie_watchesObj => {
                             if (movie_watchesObj.movie) {
@@ -20,14 +21,24 @@ class WatchedContainer extends React.Component {
                                 return <PersistedMovieCard key={uuid()} movie={movie_watchesObj} />
                         }})}
                     </Card.Group>
-                    :
-                    <h3>You haven't watched any movies lately!</h3>}
-                </Container>
-            </React.Fragment>
+                </React.Fragment>
+                :
+                <React.Fragment>
+                    <Message>
+                        <Message.Header as='h2'>None Found!</Message.Header>
+                        <p>Click below to search for films you've already seen.</p>
+                    </Message>
+                    <Button
+                        onClick={ () => this.props.history.push('/movies')}
+                        >Browse films
+                    </Button>
+                </React.Fragment>
+                }
+            </Container>
         )
     }
 }
 
 const mapStateToProps = store => ({ moviesArray: store.moviesArray, currentUser: store.currentUser })
 
-export default connect(mapStateToProps)(WatchedContainer)
+export default withRouter(connect(mapStateToProps)(WatchedContainer))

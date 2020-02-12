@@ -15,9 +15,8 @@ class TrailerCard extends React.Component {
                         width="360" 
                         height="300" 
                         src={key} 
-                        frameborder="0" >
+                        frameBorder="0" >
                     </iframe>
-                <p>{site}</p>
             </Grid.Column>
         )
     }

@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2020_02_07_162917) do
     t.string "username"
     t.string "password"
     t.string "name"
-    t.datetime "birthday"
+    t.string "birthday"
     t.text "bio"
     t.string "img"
     t.string "region"

@@ -1,8 +1,9 @@
 import React from 'react'
-import { Header, Grid, Segment, Image, Container, Button, Message } from 'semantic-ui-react'
+import { Header, Grid, Segment, Image, Container, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { addMovieToWatchList, addMovieToFavorites, watchMovie } from '../redux/actionCreators'
 import swal from 'sweetalert'
+import { withRouter } from 'react-router-dom'
 
 class MovieShow extends React.Component {
 
@@ -82,12 +83,11 @@ class MovieShow extends React.Component {
                                         <React.Fragment>
                                             <Header as="h3">Movie Cover</Header>
                                             <Image wrapped size='medium' src={poster_path} alt={original_title} />
-                                            <Message>
-                                                <Message.Content>
-                                                    Login to start tracking this movie!
-                                                </Message.Content>
-                                            </Message>
-
+                                                <Button
+                                                    fluid={true}
+                                                    onClick={ () => this.props.history.push('/login')}
+                                                    >Login to Start Tracking this Movie!
+                                                </Button>
                                         </React.Fragment>
                                         :
                                         <React.Fragment>
@@ -95,6 +95,7 @@ class MovieShow extends React.Component {
                                             <Image wrapped size='medium' src={poster_path} alt={original_title} />
                                             {this.hasUserWatchedMovie() === false
                                             ?
+                                         
                                             <Button
                                                 floated="left"
                                                 primary
@@ -140,6 +141,7 @@ class MovieShow extends React.Component {
                                                 floated="left"
                                                 >On Your Watch List!
                                             </Button>
+                                        
                                             }
                                         </React.Fragment>
                                         }
@@ -180,4 +182,4 @@ const mapDispatchToProps = dispatch => {
                       watchMovie: (currentUserId, movieObj) => dispatch(watchMovie(currentUserId, movieObj)) }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieShow)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MovieShow))

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Card, Image, Button, Modal } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { Card, Image, Button, Header } from 'semantic-ui-react'
+import { withRouter } from 'react-router-dom'
 
 class MovieCardModal extends React.Component {
     render() {
@@ -8,29 +8,30 @@ class MovieCardModal extends React.Component {
 
         return (
             <React.Fragment>
-                <Modal.Header>{original_title}</Modal.Header>
-                <React.Fragment>
+                <Card.Content>
+                    <Header textAlign="center" as='h2'>{original_title}</Header>
                     <Card.Content>
-                        <Image src={poster_path} size='medium' />
-                        <Card.Meta>
-                            <span className='date'>Release Date: {release_date}</span>
-                        </Card.Meta>
-                        <Card.Description>
-                            {overview}
-                        </Card.Description>
+                        <Image centered={true} className='movieCardModal' src={poster_path} size='medium' />
                     </Card.Content>
-                    <Card.Content extra>
-                        Rating: {vote_average}
+                    <Card.Content className='cardModalText' textAlign="center">
+                        <p><b>Release Date:</b> {release_date}</p>
+                        <p><b>Rating: {vote_average}</b></p>
+                        <p><b>Description:</b> {overview}</p>
                     </Card.Content>
-                </React.Fragment>
-                <Link to={`/movies/${id}`} >
-                    <Button fluid={true}>
-                        More Info
+                   
+                        
+                    <Button 
+                        positive
+                        fluid={true} 
+                        onClick={ () => this.props.history.push(`/movies/${id}`)}
+                        >More Info
                     </Button>
-                </Link>
+                </Card.Content>
+            
+               
             </React.Fragment>
         )
     }
 }
 
-export default MovieCardModal
+export default withRouter(MovieCardModal)

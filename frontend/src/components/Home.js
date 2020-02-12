@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from 'semantic-ui-react'
+import { Header, Container } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
 class Home extends React.Component {
@@ -7,7 +7,7 @@ class Home extends React.Component {
     render() {
         if (this.props.trailerArray.length !== 0) {
             return (
-                <React.Fragment>
+                <Container>
                     <Header as="h1" inverted color="yellow" textAlign="center">
                         {this.props.trailerArray.length === 1 
                         ? 
@@ -15,7 +15,7 @@ class Home extends React.Component {
                         : 
                         `Top Movie Trailers from ${this.props.trailerArray[0].site}`}
                     </Header>
-                </React.Fragment>
+                </Container>
             )
         } else {
             return null

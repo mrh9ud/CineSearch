@@ -9,13 +9,13 @@ class NavBar extends React.Component {
     render() {
         return (
             <React.Fragment>
-            <Menu id="cinesearch-nav-bar" position="left" inverted>
+            <Menu id="CineSearchNavBar" position="left" inverted>
                 <NavLink to='/'>
-                    <Menu.Item name='logo'>CineSearch</Menu.Item>
+                    <Menu.Item position="left" name='logo'>CineSearch</Menu.Item>
                 </NavLink>
 
                 <NavLink to='/movies'>
-                    <Menu.Item name='movies'>Browse Movies</Menu.Item>
+                    <Menu.Item position="left" name='movies'>Browse Movies</Menu.Item>
                 </NavLink>
                 {this.props.currentUser
                 ?

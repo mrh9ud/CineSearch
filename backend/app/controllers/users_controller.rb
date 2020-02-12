@@ -27,7 +27,6 @@ class UsersController < ApplicationController
     end
 
     def create
-        byebug
         user = User.create(
             username: params[:username], 
             password: params[:password], 
@@ -130,7 +129,6 @@ class UsersController < ApplicationController
 
     def destroy
         user_to_delete = User.find(params[:id])
-        byebug
         user_to_delete.destroy
     end
 

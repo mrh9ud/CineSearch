@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import TrailerCard from '../components/TrailerCard'
-import { Grid, Container, Header, Message, Button } from 'semantic-ui-react'
+import { Grid, Container, Message, Button } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
 
 class TrailerContainer extends React.Component {
@@ -19,12 +19,11 @@ class TrailerContainer extends React.Component {
             )
         } else {
             return (
-                <React.Fragment>
+                <Container>
                     <Message>
                         <Message.Header as='h2'>Woops! No Movie trailers were found!</Message.Header>
                         <p>Click below to find films to watch. {!this.props.currentUser ? " Make sure to login to start tracking movies!" : null} </p>
                     </Message>
-                    <Button.Group>
                         <Button
                             onClick={ () => this.props.history.push('/movies')}
                             >Find Movies to Watch
@@ -33,8 +32,7 @@ class TrailerContainer extends React.Component {
                             onClick={ () => this.props.history.push('/login')}
                             >Login
                         </Button>
-                    </Button.Group>
-                </React.Fragment>
+                </Container>
             )
         }
     }

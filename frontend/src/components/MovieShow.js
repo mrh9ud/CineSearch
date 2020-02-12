@@ -77,7 +77,7 @@ class MovieShow extends React.Component {
                             <Grid.Row stretched>
                                 <Grid.Column>
 
-                                    <Segment>
+                                    <Segment id='MovieShowDiv'>
                                         {!this.props.currentUser
                                         ?
                                         <React.Fragment>
@@ -95,7 +95,6 @@ class MovieShow extends React.Component {
                                             <Image wrapped size='medium' src={poster_path} alt={original_title} />
                                             {this.hasUserWatchedMovie() === false
                                             ?
-                                         
                                             <Button
                                                 floated="left"
                                                 primary

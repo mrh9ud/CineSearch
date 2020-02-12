@@ -55,11 +55,22 @@
   margin-left: 10px
 }
 
-.ui.medium.image.movieCardModal {
-  display: inline;
-  margin-left: 200px
-}
-
 .ui.negative.button {
   margin-top: 10px;
+}
+
+#MovieShowDiv button {
+  margin: 3px 3px 3px 3px
+}
+
+#MovieShowDiv {
+  text-align: center
+}
+
+#CardModalDiv {
+  text-align: center
+}
+
+div.left.item {
+  margin-top: 8px
 }

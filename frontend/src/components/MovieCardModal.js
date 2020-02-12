@@ -10,7 +10,7 @@ class MovieCardModal extends React.Component {
             <React.Fragment>
                 <Card.Content>
                     <Header textAlign="center" as='h2'>{original_title}</Header>
-                    <Card.Content>
+                    <Card.Content id="CardModalDiv">
                         <Image centered={true} className='movieCardModal' src={poster_path} size='medium' />
                     </Card.Content>
                     <Card.Content className='cardModalText' textAlign="center">

@@ -18,8 +18,6 @@ class MovieCardModal extends React.Component {
                         <p><b>Rating: {vote_average}</b></p>
                         <p><b>Description:</b> {overview}</p>
                     </Card.Content>
-                   
-                        
                     <Button 
                         positive
                         fluid={true} 
@@ -27,8 +25,6 @@ class MovieCardModal extends React.Component {
                         >More Info
                     </Button>
                 </Card.Content>
-            
-               
             </React.Fragment>
         )
     }

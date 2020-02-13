@@ -2,7 +2,7 @@ import swal from 'sweetalert'
 import { FETCHED_RECOMMENDED_MOVIES, LOADING, FETCHED_SEARCHED_MOVIES, LOGIN_USER, 
         ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, ADD_MOVIE_TO_WATCHED, LOGOUT_USER, 
         REMOVE_MOVIE_USER_WATCHLIST, REMOVE_MOVIE_USER_FAVORITE, REMOVE_MOVIE_USER_WATCHED,
-        RENDER_RANDOM_TRAILER } from './actionType'
+        RENDER_RANDOM_TRAILER, SHOW_MOVIE } from './actionType'
 
 const movieRecURL = 'http://localhost:3000/movies'
 const movieSearchURL ='http://localhost:3000/search'
@@ -17,6 +17,7 @@ const deleteMovieUserWatchListURL = 'http://localhost:3000/watch_lists/'
 const getRandomMovieTrailerURL = 'http://localhost:3000/trailer'
 const deleteCurrentUserURL = 'http://localhost:3000/users/'
 const editCurrentUserURL = 'http://localhost:3000/users/'
+const movieShowURL = 'http://localhost:3000/movieshow'
 
 function fetchedRecommendedMovies(recommendedMoviesArray) { return { type: FETCHED_RECOMMENDED_MOVIES, payload: recommendedMoviesArray } }
 
@@ -41,6 +42,28 @@ function movieUserWatchListRemoved(movieWatchListId) { return { type: REMOVE_MOV
 function movieUserFavoriteRemoved(movieFavoriteId) { return { type: REMOVE_MOVIE_USER_FAVORITE, payload: movieFavoriteId} }
 
 function movieUserWatchedRemoved(movieWatchedId) { return { type: REMOVE_MOVIE_USER_WATCHED, payload: movieWatchedId } }
+
+function currentMovieFetched(movieObj) { return { type: SHOW_MOVIE, payload: movieObj}}
+
+function fetchCurrentMovie(movieObj) {
+    return dispatch => {
+        let body = {
+            movieObj
+        }
+        let movieShowConfigObj = {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json',
+                "Accept": 'application/json'  
+            },
+            body: JSON.stringify(body)
+        }
+        dispatch(loading())
+        fetch(movieShowURL, movieShowConfigObj)
+        .then(res => res.json())
+        .then(data => {console.log(data); dispatch(currentMovieFetched) } )
+    }
+}
 
 function editCurrentUser(currentUserObj, currentUserId) {
     return dispatch => {
@@ -313,4 +336,4 @@ function fetchingSearchedMovies(searchTerm) {
 export { fetchingRecommendedMovies, fetchingSearchedMovies, createNewUser, verifyUser, 
         addMovieToWatchList, addMovieToFavorites, watchMovie, logOutUser, removeMovieUserWatchList, 
         removeMovieUserFavorite, removeMovieUserWatched, fetchingRandomMovieTrailer, deleteCurrentUser,
-        editCurrentUser }
+        editCurrentUser, fetchCurrentMovie }

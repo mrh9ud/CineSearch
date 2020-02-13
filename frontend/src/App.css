@@ -74,3 +74,11 @@
 div.left.item {
   margin-top: 8px
 }
+
+#ModalButton {
+  margin: 15px 0px 0px 0px
+}
+
+button#ShowPageButton.ui.fluid.button {
+  margin: 10px 63px 3px 1px
+}

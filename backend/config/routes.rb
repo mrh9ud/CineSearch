@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   post '/search', to: 'movies#search'
   post '/login', to: 'users#login'
   get '/trailer', to: 'movies#random_trailer'
+  get '/movieshow', to: 'movies#movie_show'
 
 end

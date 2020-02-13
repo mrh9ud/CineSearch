@@ -1,5 +1,6 @@
 class WatchListsController < ApplicationController
     def create
+        byebug
         movie = Movie.find_or_create_by(
             original_title: params[:movie][:original_title],
             release_date: params[:movie][:release_date],

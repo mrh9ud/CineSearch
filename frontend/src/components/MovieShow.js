@@ -1,11 +1,15 @@
 import React from 'react'
 import { Header, Grid, Segment, Image, Container, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { addMovieToWatchList, addMovieToFavorites, watchMovie } from '../redux/actionCreators'
+import { addMovieToWatchList, addMovieToFavorites, watchMovie, fetchCurrentMovie } from '../redux/actionCreators'
 import swal from 'sweetalert'
 import { withRouter } from 'react-router-dom'
 
 class MovieShow extends React.Component {
+
+    componentDidMount() {
+        this.props.fetchCurrentMovie(this.props.foundMovie)
+    }
 
     findMovieToAddWatchList = () => {
         if (this.props.currentUser) {
@@ -65,6 +69,7 @@ class MovieShow extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         if (this.props.foundMovie === undefined) {
             return <h1>Loading</h1>
         } else {
@@ -84,7 +89,8 @@ class MovieShow extends React.Component {
                                             <Header as="h3">Movie Cover</Header>
                                             <Image wrapped size='medium' src={poster_path} alt={original_title} />
                                                 <Button
-                                                    fluid={true}
+                                                    id='ShowPageButton'
+                                                    fluid='true'
                                                     onClick={ () => this.props.history.push('/login')}
                                                     >Login to Start Tracking this Movie!
                                                 </Button>
@@ -153,7 +159,7 @@ class MovieShow extends React.Component {
                                         <Header as="h3" floated='left'>Movie Information:</Header>
                                         <br /><br />
                                         <p><b>Description:</b> {overview}</p>
-                                        <p><b>Original Release Date:</b> {release_date}</p>
+                                        <p><b>Original Release Date:</b> {release_date.slice(0, 10)}</p>
                                         <p><b>Average Viewer Score:</b> {vote_average}</p>
                                     </Segment>
 
@@ -178,7 +184,8 @@ const mapStateToProps = store => {
 const mapDispatchToProps = dispatch => {
     return { addMovieToWatchList: (currentUserId, movieObj) => dispatch(addMovieToWatchList(currentUserId, movieObj)),
              addMovieToFavorites: (currentUserId, movieObj) => dispatch(addMovieToFavorites(currentUserId, movieObj)),
-                      watchMovie: (currentUserId, movieObj) => dispatch(watchMovie(currentUserId, movieObj)) }
+                      watchMovie: (currentUserId, movieObj) => dispatch(watchMovie(currentUserId, movieObj)),
+                                      fetchCurrentMovie: (movieObj) => dispatch(fetchCurrentMovie(movieObj)) }
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MovieShow))

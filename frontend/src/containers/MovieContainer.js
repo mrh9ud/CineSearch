@@ -9,7 +9,12 @@ class MovieContainer extends React.Component {
         return (
             <React.Fragment>
                 <Container>
-                    <Header textAlign='center' inverted size="large">Top 20 Recommended Movies for Today</Header>
+                    {this.props.moviesArray.length !== 20
+                    ?
+                    <Header textAlign='center' color='yellow' inverted size='large'>Your Search Results</Header>
+                    :
+                    <Header textAlign='center' color='yellow' inverted size="large">Top 20 Recommended Movies for Today</Header>
+                    }
                     <Card.Group className='stackable' itemsPerRow={5}>
                         {this.props.moviesArray.map( movie => <MovieCard key={uuid()} movie={movie} />)}
                     </Card.Group>

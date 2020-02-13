@@ -2,7 +2,17 @@ import { combineReducers } from 'redux'
 import { FETCHED_RECOMMENDED_MOVIES, FETCHED_SEARCHED_MOVIES, LOGIN_USER, 
         ADD_TO_WATCH_LIST, ADD_MOVIE_TO_FAVORITES, LOGOUT_USER, ADD_MOVIE_TO_WATCHED, 
         REMOVE_MOVIE_USER_WATCHED, REMOVE_MOVIE_USER_WATCHLIST, REMOVE_MOVIE_USER_FAVORITE,
-        RENDER_RANDOM_TRAILER } from './actionType'
+        RENDER_RANDOM_TRAILER, SHOW_MOVIE } from './actionType'
+
+const movieShowReducer = (oldState=[], action) => {
+    debugger
+    switch(action.type) {
+        case SHOW_MOVIE:
+            return action.payload
+        default:
+            return oldState
+    }
+}
 
 const moviesReducer = (oldState=[], action) => {
     switch(action.type) {
@@ -90,7 +100,8 @@ const currentUserReducer = (oldState=null, action) => {
 const rootReducer = combineReducers({
     moviesArray: moviesReducer,
     currentUser: currentUserReducer,
-    trailerArray: movieTrailerReducer
+    trailerArray: movieTrailerReducer,
+    movieShowArray: movieShowReducer
 })
 
 export default rootReducer

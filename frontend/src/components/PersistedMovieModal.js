@@ -16,13 +16,14 @@ class PersistedMovieModal extends React.Component {
                         <Image centered={true} className='movieCardModal' src={poster_path} size='medium' />
                     </Card.Content>
                     <Card.Content className='cardModalText' textAlign="center">
-                        <p><b>Release Date:</b> {release_date}</p>
-                        <p><b>Rating: {vote_average}</b></p>
+                        <p><b>Release Date:</b> {release_date.slice(0, 10)}</p>
+                        <p><b>Rating:</b> {vote_average}</p>
                         <p><b>Description:</b> {overview}</p>
                     </Card.Content>
                     <Button 
+                        id='ModalButton' 
                         positive
-                        fluid={true} 
+                        fluid='true' 
                         onClick={ () => this.props.history.push(`/movies/${api_id}`)}
                         >More Info
                     </Button>
